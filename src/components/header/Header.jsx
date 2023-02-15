@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom'
 import './header.scss'
 import imgLogo from '../../assets/logo.png'
+import imgBasket from '../../assets/basket.png'
+
 
 const links = [
   {
@@ -35,7 +37,7 @@ const Header = () => {
                   to={link.to}
                   key={link.id}
                   style={({ isActive }) => ({
-                    color: isActive ? '#547147' : '#333333'
+                    textDecoration: isActive ? 'underline' : 'none'
                   })}
                 >
                   {link.name}
@@ -43,7 +45,9 @@ const Header = () => {
               ))
             }
           </nav>
-          <NavLink to="basket" className="header__nav-basket"></NavLink>
+          <NavLink to="basket" className="header__nav-basket">
+            <img src={imgBasket} alt="basket" height="50"/>
+          </NavLink>
         </div>
       </header>
     </>

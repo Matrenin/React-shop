@@ -1,0 +1,136 @@
+.stockSlider {
+    font-family: 'Montserrat', Times, serif;
+    max-width: 1300px;
+    max-height: 450px;
+    background-image: url(../../assets/stocks/stocksBack.png);
+    background-repeat: no-repeat;
+    background-position: inherit;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    
+    &__info {
+       &_action {
+            color: #FFFFFF;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 34px;
+            padding: 15px 50px 15px 60px;
+            background-image: url(../../assets/stocks/actionBack.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-top: 45px;
+       }
+
+       & h2 {
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 54px;
+            color: #404936;
+            width: 579px;
+            margin: 20px 0 0 60px;
+       }
+
+       &_price{
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 34px;
+        color: #404936;
+        margin: 25px 0 0 60px;
+        
+            & span {
+                color: #A3A3A3;
+                font-weight: 500;
+                font-size: 26px;
+                line-height: 34px;
+                text-decoration: line-through;
+                padding-right: 32px;
+            }
+       }
+
+       &_btn{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            background-color: #547147;
+            border-radius: 40px;
+            margin: 31px 0 0 60px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.01);
+            }
+
+            &:active {
+                box-shadow: inset 1px 1px 5px #191f12;
+            }
+       }
+    }
+
+    &__imgBlock {
+        position: relative;
+        overflow: hidden;
+        padding-left: 35px;
+        
+        &_img{
+            clip-path: polygon(17% 0, 100% 0, 100% 100%, 2% 100%);
+        }
+    }
+
+    &__imgBlock::before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        height: 121%;
+        transform: rotate(9deg);
+        top: -20px;
+        padding-left: 45px;
+        background-color: #547147;
+    }
+}
+
+.sertificates {
+    font-family: 'Montserrat', Times, serif;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    color: #333333;
+
+  //&__img {}
+    &__info {
+        max-width: 560px;
+
+        & h3 {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        & ul{
+            list-style-image: url(../../assets/stocks/ellipse.svg);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            padding-left: 17px;
+            
+            & li {
+               padding-top: 15px;
+
+               &:first-child{
+                padding-top: 30px;
+               }
+            }
+        }
+    }
+}

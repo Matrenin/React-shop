@@ -35,6 +35,10 @@ import { useState, useEffect } from 'react'
 
 const Slider = () => {
   const [index, setIndex] = useState(0)
+  
+  const handleClick = i => {
+    setIndex(i)
+  }
 
   useEffect(() => {
     let btns = document.querySelectorAll('.slider__box-btns-btn')
@@ -45,14 +49,9 @@ const Slider = () => {
         btn.className = 'slider__box-btns-btn'
       }
     })
-    setTimeout(() => {
-      if (index + 1 < sliders.length) {
-        setIndex(prev => prev + 1)
-      } else {
-        setIndex(0)
-      }
-    }, 3000)
   }, [index])
+
+  console.log(index)
 
   return (
     <>
@@ -71,7 +70,7 @@ const Slider = () => {
                   className="slider__box-btns-btn"
                   value={i}
                   key={btn.id}
-                  // onClick={() => handleClick(i)}
+                  onClick={() => handleClick(i)}
                 ></button>
               ))
             }
