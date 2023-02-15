@@ -47,16 +47,6 @@
         padding: 20px 30px;
         border: none;
         cursor: pointer;
-        transition: .3s;
-
-        &:hover {
-          filter: brightness(80%);
-        }
-
-        &:active {
-          background: #547147;
-          color: #fff;
-        }
       }
     }
 

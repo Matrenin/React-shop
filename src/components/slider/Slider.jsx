@@ -3,11 +3,8 @@ import horseWalk from '../../assets/slider/horseWalk.png'
 import fly from '../../assets/slider/fly.png'
 import yacht from '../../assets/slider/yacht.png'
 import dome from '../../assets/slider/dome.png'
-import { Modal } from '../modal/modal'
-import { Application } from '../application/application'
 
 import { useState, useEffect } from 'react'
-
 
  export const sliders = [
   {
@@ -38,7 +35,10 @@ import { useState, useEffect } from 'react'
 
 const Slider = () => {
   const [index, setIndex] = useState(0)
-  const [modalActive, setModalActive] = useState(false)
+  
+  const handleClick = i => {
+    setIndex(i)
+  }
 
   useEffect(() => {
     let btns = document.querySelectorAll('.slider__box-btns-btn')
@@ -49,14 +49,9 @@ const Slider = () => {
         btn.className = 'slider__box-btns-btn'
       }
     })
-    setTimeout(() => {
-      if (index + 1 < sliders.length) {
-        setIndex(prev => prev + 1)
-      } else {
-        setIndex(0)
-      }
-    }, 3000)
   }, [index])
+
+  console.log(index)
 
   return (
     <>
@@ -66,7 +61,7 @@ const Slider = () => {
           <div className="slider__box-info">
             <p>{sliders[index].price}</p>
             <h1>{sliders[index].title}</h1>
-            <button onClick={() => setModalActive(true)}>Заказать впечатление</button>
+            <button>Заказать впечатление</button>
           </div>
           <div className="slider__box-btns">
             {
@@ -75,16 +70,13 @@ const Slider = () => {
                   className="slider__box-btns-btn"
                   value={i}
                   key={btn.id}
-                  // onClick={() => handleClick(i)}
+                  onClick={() => handleClick(i)}
                 ></button>
               ))
             }
           </div>
         </div>
       </div>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <Application/>
-      </Modal>
     </>
   )
 }
