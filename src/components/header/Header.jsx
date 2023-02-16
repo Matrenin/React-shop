@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom'
 import './header.scss'
 import imgLogo from '../../assets/logo.png'
 
-const links = [
+//предлагаю этот массив импортировать в футер, чтобы не дублировать код для навигации
+export const links = [
   {
     id: 1,
     name: 'Каталог',

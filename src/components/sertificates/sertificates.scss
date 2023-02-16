@@ -1,0 +1,37 @@
+.sertificates {
+  font-family: 'Montserrat', Times, serif;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  color: #333333;
+
+//&__img {}
+  &__info {
+      max-width: 560px;
+
+      & h3 {
+          font-weight: 700;
+          font-size: 40px;
+          line-height: 50px;
+      }
+
+      & ul{
+          list-style-image: url(../../assets/stocks/ellipse.svg);
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          padding-left: 17px;
+          
+          & li {
+             padding-top: 15px;
+
+             &:first-child{
+              padding-top: 30px;
+             }
+          }
+      }
+  }
+}

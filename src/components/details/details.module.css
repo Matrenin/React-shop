@@ -1,0 +1,68 @@
+.details {
+    background: #FFFFFF;
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    max-width: 530px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details__head {
+    margin: 0 0 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 34px;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.details__price {
+    margin: 0 0 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 34px;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+
+.details__btn {
+    background: #547147;
+    border-radius: 40px;
+    color: #FFFFFF;
+    padding: 16px 32px;
+    border: 1px solid #FFFFFF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.details__btn:hover {
+    background: #FFFFFF;
+    border: 1px solid #547147;
+    color: #547147;
+}
+
+.details__btn:active {
+    background: #547147;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.details__checkbox__input {
+    margin-right: 10px;
+}
