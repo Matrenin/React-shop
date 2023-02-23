@@ -1,0 +1,114 @@
+.header {
+  padding-top: 20px;
+
+  &__nav {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 12px;
+    position: relative;
+    //border-bottom: 1px solid #547147;
+
+    &::after{
+      content: '';
+      background-color: #547147;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+    }
+
+    &-logo {
+      justify-self: start;
+    }
+
+    & nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+
+      & a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #333333;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:active {
+          color: #547147;
+        }
+      }
+    }
+
+    &-right {
+      justify-self: end;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+
+      & a {
+        display: block;
+        justify-self: end;
+        width: 50px;
+        height: 50px;
+        background-image: url('../../assets/personalArea.png');
+        background-position: center;
+        background-size: 90%;
+        background-repeat: no-repeat;
+
+        &:hover {
+          filter: brightness(80%);
+        }
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 270px;
+    height: 50px;
+    border: 1px solid #547147;
+    border-radius: 40px;
+    cursor: pointer;
+
+    &-img{
+      position: absolute;
+      left: 15px;
+    }
+
+    &-input {
+      border: none;
+      outline: none;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #888888;
+      padding: 0 10px 0 30px;
+      overflow: hidden;
+      border-radius: 40px;
+    }
+  }
+
+  &__link{
+    display: flex;
+  }
+}
+
+.input__search-focus {
+  width: 100%;
+}
+
+.search-img-hidden {
+  display: none;
+}
