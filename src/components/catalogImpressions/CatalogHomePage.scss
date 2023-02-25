@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Inter:wght@200;400;600;700;900&family=Montserrat:wght@100;200;400;600;700;800;900&display=swap');
 
 .catalogImpressions {
-  max-width: 1401px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 100px 0;
 
+  @media (max-width: 900px) {
+    padding: 75px 0;
+  }
+
+  @media (max-width: 670px) {
+    padding: 60px 0;
+  }
 }
+
+
 
 .title {
 font-weight: 700;
@@ -16,6 +25,11 @@ text-transform: uppercase;
 color: #333333;
 font-family: 'Montserrat';
 margin-bottom: 40px;
+
+@media (max-width: 670px) {
+  font-size: 21px;
+  line-height: 25px;
+  }
 }
 
 .catalogCard {
@@ -23,19 +37,37 @@ margin-bottom: 40px;
   flex-wrap: wrap;
   overflow-x: auto;
   overflow-y: hidden;
-  justify-content: center;
+  justify-content: space-between;
+
+  @media (max-width: 360px){
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .card {
  max-width: 407px;
  max-height: 681px;
- margin: 20px 40px 20px 0;
+ margin: 0 0 20px 0;
  background: #FFFFFF;
  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
  border-radius: 20px;
 
+  @media (max-width: 865px) {
+    max-width: 350px;
+  }
+
+  @media (max-width: 745px) {
+    max-width: 320px;
+  }
+
+  @media (max-width: 670px) {
+    max-width: 158px;
+  }
+
  &__img {
   img {
+    width: 100%;
     border-radius: 20px 20px 0px 0px;
     cursor: pointer;
   }
@@ -49,7 +81,17 @@ margin-bottom: 40px;
   text-align: center;
   margin: 0 auto;
   height: 297px;
- }
+  
+  @media (max-width: 865px){
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  @media (max-width: 670px){
+    height: 190px;
+  }
+
+}
 
  &__title {
   color: #333333;
@@ -59,27 +101,47 @@ margin-bottom: 40px;
   font-size: 30px;
   line-height: 34px;
   cursor: pointer;
+
+  @media (max-width: 865px){
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 670px){
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
  }
 
  &__body {
-  text-align: center;
-  width: 100%;
+  //text-align: center;
+  //width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 
-  h1 {
+  & h1 {
    font-weight: 600;
    font-size: 40px;
    line-height: 44px;
    color: #333333;
    font-family: 'Montserrat';
+
+    @media (max-width: 670px){
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
-  p{
-   font-weight: 500;
-font-size: 20px;
-line-height: 24px;
-color: #888888;
-font-family: 'Montserrat';
-cursor: pointer;
+  & p{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #888888;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    
     &:hover {
       color: #000;
     }
@@ -93,17 +155,25 @@ cursor: pointer;
   background: #547147;
   border-radius: 40px;
   font-family: 'Montserrat';
- font-weight: 700;
- font-size: 20px;
- line-height: 24px;
- color: #FFFFFF;
- border: 1px solid #547147;
- cursor: pointer;
- margin: 24px 0 20px;
- &:hover {
-  color: #547147;
-  background-color: #FFFFFF;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
   border: 1px solid #547147;
+  cursor: pointer;
+  margin: 24px 0 20px;
+
+  @media (max-width: 670px){
+    font-size: 12px;
+    line-height: 16px;
+    padding: 8px 40px;
+    margin: 18px 0 10px;
+  }
+  
+  &:hover {
+    color: #547147;
+    background-color: #FFFFFF;
+    border: 1px solid #547147;
  }
 }
 

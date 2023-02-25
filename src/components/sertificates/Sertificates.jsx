@@ -4,7 +4,7 @@ import certificates from '../../assets/stocks/certificates.png'
 const Sertificates = () => {
   return (
     <>
-      <section className="sertificates">
+      <section className="sertificates container">
         <div className="sertificates__img">
           <img src={certificates} alt="certificates_img" />
         </div>

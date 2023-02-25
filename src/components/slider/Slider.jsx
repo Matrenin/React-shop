@@ -69,7 +69,7 @@ const Slider = () => {
     <>
       <div className="slider container">
         <div className="slider__box">
-          <img src={sliders[index].img} alt="img slider" />
+          <img className='slider__img' src={sliders[index].img} alt="img slider" />
           <div className="slider__box-info">
             <p>{sliders[index].price}</p>
             <h1>{sliders[index].title}</h1>

@@ -16,7 +16,7 @@ const Stocks = () => {
 
   return (
     <>
-      <div className="stocks">
+      <div className="stocks container">
         <h1>Акции месяца</h1>
         <section className="stockSlider">
           <div className="stockSlider__info">

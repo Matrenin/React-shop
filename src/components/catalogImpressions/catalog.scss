@@ -23,7 +23,12 @@ margin-bottom: 40px;
   flex-wrap: wrap;
   overflow-x: auto;
   overflow-y: hidden;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  @media (max-width: 1261px) {
+    justify-content: space-evenly;
+  }
 }
 
 .card {
@@ -59,6 +64,8 @@ margin-bottom: 40px;
   font-size: 30px;
   line-height: 34px;
   cursor: pointer;
+
+  
  }
 
  &__body {
@@ -75,11 +82,11 @@ margin-bottom: 40px;
 
   p{
    font-weight: 500;
-font-size: 20px;
-line-height: 24px;
-color: #888888;
-font-family: 'Montserrat';
-cursor: pointer;
+   font-size: 20px;
+   line-height: 24px;
+   color: #888888;
+   font-family: 'Montserrat';
+   cursor: pointer;
     &:hover {
       color: #000;
     }
@@ -88,22 +95,22 @@ cursor: pointer;
 }
 
 .cardBtn {
-  padding: 12px 95px;
-  text-align: center;
-  background: #547147;
-  border-radius: 40px;
-  font-family: 'Montserrat';
- font-weight: 700;
- font-size: 20px;
- line-height: 24px;
- color: #FFFFFF;
- border: 1px solid #547147;
- cursor: pointer;
- margin: 24px 0 20px;
- &:hover {
-  color: #547147;
-  background-color: #FFFFFF;
-  border: 1px solid #547147;
+    padding: 12px 95px;
+    text-align: center;
+    background: #547147;
+    border-radius: 40px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: 1px solid #547147;
+    cursor: pointer;
+    margin: 24px 0 20px;
+    &:hover {
+      color: #547147;
+      background-color: #FFFFFF;
+      border: 1px solid #547147;
  }
 }
 

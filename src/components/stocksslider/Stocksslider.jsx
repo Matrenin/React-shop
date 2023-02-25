@@ -54,7 +54,7 @@ const Stocksslider = () => {
 
   return (
     <>
-      <div className="stocks">
+      <div className="stocks container">
         <section className="stocksSlider">
           <div className="stocksSlider__info">
             <p className="stocksSlider__info_action">АКЦИЯ МЕСЯЦА</p>

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import './header.scss'
 import imgLogo from '../../assets/logo.png'
 import imgSearch from '../../assets/search.png'
+import closed from '../../assets/close-icon.png'
 import { removeUser } from '../../store/auth/action'
 import { useAuth } from '../../hooks/use-auth'
 import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth'
@@ -83,7 +84,7 @@ const Header = () => {
               </div>
 
               :
-              <div> 
+              <div className="header__link"> 
                 <NavLink to='/login'>
                   <button>Войти</button>
                 </NavLink>

@@ -4,7 +4,7 @@ import { Application } from '../application/application'
 
 const ContactContent = () => {
     return (
-        <section className='center'>
+        <section className='center container'>
             <div className='contact'>
                 <div className='contact__text'>
                     <h1 className='contact__text__tall'>Контакты</h1>
