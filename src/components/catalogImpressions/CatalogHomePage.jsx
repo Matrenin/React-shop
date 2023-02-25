@@ -40,7 +40,7 @@ const CatalogHomePage = () => {
     <h1 className="title">
       Каталог впечатлений
     </h1>
-    <div className="catalogCard">
+    <div className="catalogCard container">
       {cardsHomePage.map(card => <CardHomePage card={card} cardId={getCardId} key={card.id}/>)}
     </div>
     {

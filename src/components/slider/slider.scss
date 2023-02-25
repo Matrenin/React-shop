@@ -1,13 +1,38 @@
 .slider {
   margin-top: 40px;
 
+  &__img {
+    width: 100%;
+    min-height: 380px;
+    
+    
+    @media (max-width: 800px) {
+           width: auto;
+           height: 380px;
+        }
+    
+  }
+
   &__box {
     position: relative;
+    border-radius: 20px;
+
+    @media (max-width: 800px) {
+      display: flex;
+      overflow: hidden;
+      border-radius: 20px;
+      justify-content: center;
+        }
 
     &-info {
       position: absolute;
       bottom: 50px;
       left: 50px;
+
+      @media (max-width: 650px) {
+        bottom: 70px;
+        left: 20px;
+        }
 
       & p {
         max-width: 201px;
@@ -23,6 +48,25 @@
         background: #DFA650;
         border-radius: 40px;
         margin-bottom: 20px;
+
+        @media (max-width: 1050px) {
+           font-size: 26px;
+           line-height: 30px;
+           
+        }
+
+        @media (max-width: 920px) {
+           font-size: 22px;
+           line-height: 28px;
+        }
+
+        @media (max-width: 650px) {
+           font-size: 12px;
+           line-height: 16px;
+           padding: 6px 10px;
+           width: max-content;
+           margin-bottom: 16px;
+        }
       }
 
       & h1 {
@@ -34,6 +78,22 @@
         text-transform: uppercase;
         color: #FFFFFF;
         margin-bottom: 30px;
+
+        @media (max-width: 1050px) {
+           font-size: 60px;
+           line-height: 62px;
+        }
+
+        @media (max-width: 920px) {
+           font-size: 48px;
+           line-height: 54px;
+           margin-bottom: 20px;
+        }
+
+        @media (max-width: 650px) {
+           font-size: 28px;
+           line-height: 32px;
+        }
       }
 
       & button {
@@ -48,6 +108,22 @@
         border: none;
         cursor: pointer;
         transition: .3s;
+
+        @media (max-width: 1050px) {
+           font-size: 18px;
+           line-height: 22px;
+        }
+
+        @media (max-width: 920px) {
+           padding: 18px 35px;
+        }
+
+        @media (max-width: 650px) {
+          font-size: 14px;
+          line-height: 18px;
+          padding: 11px 22px;
+           
+        }
 
         &:hover {
           filter: brightness(80%);
@@ -67,6 +143,12 @@
       display: flex;
       gap: 20px;
 
+       @media (max-width: 500px) {
+        bottom: 20px;
+        right: 40%;
+        gap: 10px;
+      }
+
       &-btn {
         width: 20px;
         height: 20px;
@@ -74,6 +156,12 @@
         background: transparent;
         border-radius: 50%;
         cursor: pointer;
+
+        @media (max-width: 650px) {
+          width: 10px;
+          height: 10px;
+          border: 1px solid #fff;
+        }
       }
     }
   }
