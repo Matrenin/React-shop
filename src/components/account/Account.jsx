@@ -15,6 +15,7 @@ const Account = () => {
     signOut(auth)
       .then(() => {
         dispatch(removeUser())
+        localStorage.removeItem('remember')
         navigate('/login')
       }).catch(error => {
         console.log(error)

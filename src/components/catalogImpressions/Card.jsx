@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Catalog.module.scss'
+import  './Catalog.scss'
 import { useDispatch } from 'react-redux'
 import { openModal, openModalDetail } from '../../store/modal/actions'
 
@@ -14,20 +14,20 @@ const Card = ({ card, setInfo, cardId }) => {
   }
 
   return (
-    <div className={style.card} onClick={() => cardId(card.id)}>
-      <div className={style.card__img}
+    <div className="card" onClick={() => cardId(card.id)}>
+      <div className="card__img"
       onClick={handleOpenDetails}>
         <img
           src={card.img}
           alt={card.title} />
       </div>
-      <div className={style.card__block}>
-        <div className={style.card__title} onClick={handleOpenDetails}>
+      <div className="card__block">
+        <div className="card__title" onClick={handleOpenDetails}>
           {card.name}
         </div>
-        <div className={style.card__body}>
-          <h1 className={style.price}>{card.price} ₽</h1>
-           <button className={style.cardBtn} onClick={handleOpenModal}>Заказать</button>
+        <div className="card__body">
+          <h1 className="price">{card.price} ₽</h1>
+           <button className="cardBtn" onClick={handleOpenModal}>Заказать</button>
           <p onClick={handleOpenDetails}>Подробнее</p>
         </div>
       </div>

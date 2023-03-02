@@ -1,4 +1,5 @@
 const CompletedApplications = () => {
+
   return (
     <div className="completed">
       completed

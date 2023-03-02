@@ -2,9 +2,10 @@ import * as types from '../auth/types'
 
 const initialState = {
     email: null,
-    token: null,
+    token: localStorage.getItem('remember')  || null,
     id: null,
-    name: null
+    name: null,
+    rememberMe: localStorage.getItem('remember') ? true : false
 }
 
 export const userReducer = (state = initialState, action) => {
@@ -18,7 +19,8 @@ export const userReducer = (state = initialState, action) => {
                 email: payload.email,
                 token: payload.token,
                 id: payload.id,
-                name: payload.name
+                name: payload.name,
+                rememberMe: payload.rememberMe
             }
 
         case types.REMOVE_USER:
@@ -27,7 +29,8 @@ export const userReducer = (state = initialState, action) => {
                 email: null,
                 token: null,
                 id: null,
-                name: null
+                name: null,
+                rememberMe: false
             }
 
         default:

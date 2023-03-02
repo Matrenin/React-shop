@@ -19,7 +19,7 @@ export const closeModalDetail = data => ({
 })
 
 export const openModalSended = data => ({
-  type: 'CLOSE_MODAL_SENDED',
+  type: 'OPEN_MODAL_SENDED',
   payload: data
 })
 
