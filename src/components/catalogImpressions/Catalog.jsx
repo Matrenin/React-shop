@@ -29,9 +29,12 @@ const Catalog = () => {
   }
 
   let filterName = useSelector((state) => {
-    return filtredCards.filter((e) =>
-      e.name.match(RegExp(`${state.text}`, 'i'))
-    )
+    if (state !== "") {
+      return filtredCards.filter((e) =>
+        e.name.match(RegExp(`${state.text}`, 'i'))
+      )
+    }
+
   })
 
   function getCardId(cardId) {
@@ -40,34 +43,49 @@ const Catalog = () => {
     setCardModal(cards[index])
   }
 
-  const watchChange = (valueMin, valueMax) => {
+  const watchChange = (valueMin, valueMax, val) => {
     let filtredCards = cards.slice();
-    setFiltredCards(filtredCards.filter((el) => valueMin <= parseInt(el.price.match(/\d+/)) && parseInt(el.price.match(/\d+/)) <= valueMax))
+    if (val === "1") {
+      setFiltredCards(filtredCards.sort((a, b) => parseInt(a.price.match(/\d+/)) - parseInt(b.price.match(/\d+/))))
+    } else if (val === "2") {
+      setFiltredCards(filtredCards.sort((a, b) => parseInt(b.price.match(/\d+/)) - parseInt(a.price.match(/\d+/))))
+    } else {
+      setFiltredCards(filtredCards)
+    }
+    if (valueMin !== "" | valueMax !== "") {
+      setFiltredCards(filtredCards.filter((el) => valueMin <= parseInt(el.price.match(/\d+/)) && parseInt(el.price.match(/\d+/)) <= valueMax))
+    }
+    // else {
+    //   setFiltredCards(filtredCards)
+    // }
+
   }
+
+
 
   return (
     <div className={style.catalogImpressions}>
-    <h1 className={style.title}>
-      Каталог впечатлений
-    </h1>
-    <FilterCost watchChange={watchChange} />
-    <div className={style.catalogCard}>
-      {filterName.map(card => <Card card={card} cardId={getCardId} key={card.id} />)}
+      <h1 className={style.title}>
+        Каталог впечатлений
+      </h1>
+      <FilterCost watchChange={watchChange} />
+      <div className={style.catalogCard}>
+        {filterName.map(card => <Card card={card} cardId={getCardId} key={card.id} />)}
+      </div>
+      {
+        modalShow &&
+        <Modal>
+          <Application />
+        </Modal>
+      }
+      {
+        modalDetail &&
+        <Modal>
+          <Details card={cardModal} />
+        </Modal>
+      }
     </div>
-    {
-      modalShow &&
-      <Modal>
-        <Application/>
-      </Modal>
-    }
-    {
-      modalDetail &&
-      <Modal>
-        <Details card={cardModal}/>
-      </Modal>
-    }
-  </div>
- );
+  );
 };
 
 export default Catalog;
