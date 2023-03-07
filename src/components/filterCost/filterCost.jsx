@@ -8,17 +8,17 @@ export function FilterCost(props) {
     const [value, setVal] = useState('');
 
     function changeMin(event) {
-        if (min >= max) {
+        if (+event.target.value >= max) {
             setMin(event.target.value);
-            setMax(+event.target.value + 100);
+            setMax(event.target.value);
         } else {
             setMin(event.target.value)
         }
     }
     function changeMax(event) {
-        if (max <= min) {
+        if (+event.target.value < min) {
             setMax(event.target.value);
-            setMin(+event.target.value - 100)
+            setMin(event.target.value)
         } else {
             setMax(event.target.value);
         }
@@ -41,17 +41,17 @@ export function FilterCost(props) {
                 <h5>Сортировать по цене</h5>
                 <div className='boxForm'>
                     <div className='radioBox'>
-                        <label htmlFor="radioUp" >
-                            <input id="radioUp" type="radio" className='radio' name="radio" value="2"
-                                checked={value === '2' ? true : false}
-                                onChange={sortImpressions} />
-                            <span>по возрастанию</span>
-                        </label>
                         <label htmlFor="radioDown">
                             <input id="radioDown" className='radio' type="radio" name="radio" value="1"
                                 checked={value === '1' ? true : false}
                                 onChange={sortImpressions}
                             />
+                            <span>по возрастанию</span>
+                        </label>
+                        <label htmlFor="radioUp" >
+                            <input id="radioUp" type="radio" className='radio' name="radio" value="2"
+                                checked={value === '2' ? true : false}
+                                onChange={sortImpressions} />
                             <span>по убыванию</span>
                         </label>
                     </div>
