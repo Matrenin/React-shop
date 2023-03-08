@@ -31,66 +31,71 @@ export const links = [
 
 
 const Header = () => {
-  const {isAuth} = useAuth();
-
+  const { isAuth } = useAuth();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+
 
   const enterFilter = useCallback((e) => {
-    dispatch(pushText(e.target.value))
+    if (e.target.value !== "") {
+      navigate("/catalog")
+      dispatch(pushText(e.target.value))
+    } else {
+      dispatch(pushText(e.target.value))
+    }
   }, [dispatch])
- 
+
   useEffect(() => {
-     const rememberMe = localStorage.getItem('remember');
-     const auth = getAuth();
-     if (rememberMe){
-       onAuthStateChanged(auth, (user) => {
-         if (user) {
- 
-           dispatch(setUser({
-             email: user.email,
-             id: user.uid,
-             token: user.accessToken,
-             name: null
-         }));  
-         } else {
-           console.log('No user is signed in.')
-         }
-       });
-     } else {
-       signOut(auth)
-       .then(() => {
+    const rememberMe = localStorage.getItem('remember');
+    const auth = getAuth();
+    if (rememberMe) {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+
+          dispatch(setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken,
+            name: null
+          }));
+        } else {
+          console.log('No user is signed in.')
+        }
+      });
+    } else {
+      signOut(auth)
+        .then(() => {
           dispatch(removeUser());
           localStorage.removeItem('remember')
           navigate('/login');
-        }).catch ((error) => {
+        }).catch((error) => {
           console.log(error)
         })
-     }
-     // eslint-disable-next-line
-   }, [])
+    }
+    // eslint-disable-next-line
+  }, [])
 
-   /*
-   const handleLogOut = (e) => {
-    e.preventDefault();
+  /*
+  const handleLogOut = (e) => {
+   e.preventDefault();
 
-    signOut(auth)
-      .then(() => {
-        dispatch(removeUser());
-        localStorage.removeItem('remember');
-        navigate('/login');
-    }).catch ((error) => {
-      console.log(error)
-    })
+   signOut(auth)
+     .then(() => {
+       dispatch(removeUser());
+       localStorage.removeItem('remember');
+       navigate('/login');
+   }).catch ((error) => {
+     console.log(error)
+   })
 
-  }*/
-  
+ }*/
+
   return (
     <>
       <header className="header">
         <div className="header__nav container">
           <NavLink to="/" className="header__nav-logo">
-            <img src={imgLogo} alt="logo" height="64"/>
+            <img src={imgLogo} alt="logo" height="64" />
           </NavLink>
           <nav>
             {
@@ -124,7 +129,7 @@ const Header = () => {
               </div>
 
               :
-              <div className="header__auth"> 
+              <div className="header__auth">
                 <NavLink to='/login'></NavLink>
               </div>
             }
