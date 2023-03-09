@@ -19,7 +19,7 @@ export function Application() {
     const dispatch = useDispatch()
     const handleSubmit = event => {
         event.preventDefault()
-        if (!errorName || !errorPhone || phone || name || agree) {
+        if (!errorName && !errorPhone && phone && name && agree) {
             let applicationObj = {
                 [idApplication]: {
                     name,
@@ -97,7 +97,7 @@ export function Application() {
                     value={commit}
                     onChange={(event) => setCommit(event.target.value)}
                 ></textarea>
-                <label className='application__checkbox' ><input className='application__checkbox__input' type='checkbox'  ></input>
+                <label className='application__checkbox' ><input className='application__checkbox__input' type='checkbox' onChange={() => setAgree(!agree)} ></input>
                     Отправляя заявку Вы соглашаетесь на обработку <span>персональных данных</span></label>
                 <button className='application__btn' type='submit'>Отправить заявку</button>
             </form>
