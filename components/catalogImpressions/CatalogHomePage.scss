@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Inter:wght@200;400;600;700;900&family=Montserrat:wght@100;200;400;600;700;800;900&display=swap');
+
+.catalogImpressions {
+  max-width: 1401px;
+  margin: 0 auto;
+  padding: 100px 0;
+
+}
+
+.title {
+font-weight: 700;
+font-size: 40px;
+line-height: 50px;
+text-align: center;
+text-transform: uppercase;
+color: #333333;
+font-family: 'Montserrat';
+margin-bottom: 40px;
+}
+
+.catalogCard {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: space-between;
+  
+  @media all and (max-width: 1300px) {
+    justify-content: space-around;
+  }
+}
+
+.card {
+ max-width: 407px;
+ max-height: 681px;
+ margin: 0 0 20px 0;
+ background: #FFFFFF;
+ box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+ border-radius: 20px;
+
+ &__img {
+  img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    cursor: pointer;
+  }
+ }
+
+ &__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px;
+  text-align: center;
+  margin: 0 auto;
+  height: 297px;
+ }
+
+ &__title {
+  color: #333333;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 34px;
+  cursor: pointer;
+ }
+
+ &__body {
+  text-align: center;
+  width: 100%;
+
+  h1 {
+   font-weight: 600;
+   font-size: 40px;
+   line-height: 44px;
+   color: #333333;
+   font-family: 'Montserrat';
+  }
+
+  p{
+   font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+color: #888888;
+font-family: 'Montserrat';
+cursor: pointer;
+    &:hover {
+      color: #000;
+    }
+  }
+ }
+}
+
+.cardBtn {
+  padding: 12px 95px;
+  text-align: center;
+  background: #547147;
+  border-radius: 40px;
+  font-family: 'Montserrat';
+ font-weight: 700;
+ font-size: 20px;
+ line-height: 24px;
+ color: #FFFFFF;
+ border: 1px solid #547147;
+ cursor: pointer;
+ margin: 24px 0 20px;
+ &:hover {
+  color: #547147;
+  background-color: #FFFFFF;
+  border: 1px solid #547147;
+ }
+}
+
+@media (min-width: 1318px) {
+  .card {
+  &:nth-child(3n) {
+    margin-right: 0;   
+  }
+  }
+ }
+ @media (min-width: 600px) and (max-width: 1318px)  {
+  .card {
+  &:nth-child(2n) {
+    margin-right: 0;
+   }
+  }
+ }

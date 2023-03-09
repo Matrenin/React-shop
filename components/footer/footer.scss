@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+.footer {
+  font-family: 'Montserrat';
+  font-style: normal;
+  color: #333333;
+
+  &__row {
+    padding-top: 60px;
+    border-top: 1px solid #547147;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  &__column {
+
+    & h2 {
+      width: 77px;
+      margin-bottom: 20px;
+      height: 28px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    & h1 {
+      height: 34px;
+      min-width: 275px;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    &-allright {
+      margin-top: 28px;
+      width: 173px;
+      height: 36px;
+      left: 72px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #888888;
+    }
+
+    &-text {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      //width: 419px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &-link {
+      margin-top: 20px;
+      
+       a {
+        &:hover {
+          filter: brightness(80%);
+        }
+      }
+
+      a:nth-of-type(2) {
+        margin-left: 20px;
+      }
+    }
+
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:active {
+          color: #547147;
+        }
+      }
+    }
+
+    & button {
+      padding: 16px 32px;
+      background: #547147;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 20px;
+      color: #FFFFFF;
+      border: 0;
+
+      &:hover {
+        background: #FFFFFF;
+        outline: 1px solid #547147;
+        color: #547147;
+      }
+    }
+  }
+}

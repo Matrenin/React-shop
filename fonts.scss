@@ -1,0 +1,69 @@
+$montserrat-font-path: './fonts/montserrat';
+$opensans-font-path: './fonts/opensans';
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Montserrat'), 
+        url('#{$montserrat-font-path}/montserrat-extrabold.eot?')  format('eot'),
+        url('#{$montserrat-font-path}/montserrat-extrabold.woff2') format('woff2'),
+        url('#{$montserrat-font-path}/montserrat-extrabold.woff') format('woff'),
+        url('#{$montserrat-font-path}/montserrat-extrabold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat'), 
+        url('#{$montserrat-font-path}/montserrat-bold.eot?')  format('eot'),
+        url('#{$montserrat-font-path}/montserrat-bold.woff2') format('woff2'),
+        url('#{$montserrat-font-path}/montserrat-bold.woff') format('woff'),
+        url('#{$montserrat-font-path}/montserrat-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Montserrat'), 
+        url('#{$montserrat-font-path}/montserrat-semibold.eot?')  format('eot'),
+        url('#{$montserrat-font-path}/montserrat-semibold.woff2') format('woff2'),
+        url('#{$montserrat-font-path}/montserrat-semibold.woff') format('woff'),
+        url('#{$montserrat-font-path}/montserrat-semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Montserrat'), 
+        url('#{$montserrat-font-path}/montserrat-medium.eot?')  format('eot'),
+        url('#{$montserrat-font-path}/montserrat-medium.woff2') format('woff2'),
+        url('#{$montserrat-font-path}/montserrat-medium.woff') format('woff'),
+        url('#{$montserrat-font-path}/montserrat-medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Montserrat'), 
+        url('#{$montserrat-font-path}/montserrat-regular.eot?')  format('eot'),
+        url('#{$montserrat-font-path}/montserrat-regular.woff2') format('woff2'),
+        url('#{$montserrat-font-path}/montserrat-regular.woff') format('woff'),
+        url('#{$montserrat-font-path}/montserrat-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), 
+        url('#{$opensans-font-path}/opensans-regular.eot?')  format('eot'),
+        url('#{$opensans-font-path}/opensans-regular.woff2') format('woff2'),
+        url('#{$opensans-font-path}/opensans-regular.woff') format('woff'),
+        url('#{$opensans-font-path}/opensans-regular.ttf') format('truetype');
+}
+

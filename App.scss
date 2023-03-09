@@ -1,0 +1,28 @@
+@import 'fonts.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  
+
+  @media all and (max-width: 1300px) {
+    padding: 0 10px;
+  }
+}
