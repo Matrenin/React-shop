@@ -5,14 +5,12 @@ const Pagination = ({ countriesPerPage, totalCoutries, paginate, currentPage }) 
     const pageNumbers = []
     //console.log(countriesPerPage, cards)
     //const totalCoutries = cards.length
-    console.log(countriesPerPage, totalCoutries)
-    const numbers = Math. ceil(totalCoutries/countriesPerPage)
+    // const numbers = Math. ceil(totalCoutries/countriesPerPage)
 
-    for (let i = 1; i <= Math. ceil(totalCoutries/countriesPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(totalCoutries/countriesPerPage); i++) {
         pageNumbers.push(i)
         
     }
-    console.log(currentPage)
 
     return (
         <div>

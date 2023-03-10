@@ -5,13 +5,16 @@ import { Modal } from '../modal/modal'
 import { Application } from '../application/application'
 import { useSelector, useDispatch } from 'react-redux'
 import { openModal, closeModalDetail } from '../../store/modal/actions'
+import { selectCard } from '../../store/card/actions'
 
 const Details = ({ card }) => {
 
     const modalShow = useSelector(store => store.modal.modalShow)
     const dispatch = useDispatch()
+
     const handleOpenModal = (event) => {
         event.preventDefault()
+        dispatch(selectCard(card))
         dispatch(openModal(true))
         dispatch(closeModalDetail(false))
     };
