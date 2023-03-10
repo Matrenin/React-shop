@@ -4,6 +4,7 @@ import { modalReducer } from './modal/reducer'
 import { userReducer } from './auth/reducer'
 import { filterNameReducer } from './filterName/reducer'
 import { cardReducer } from './card/reducer'
+
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
