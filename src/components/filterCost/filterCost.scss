@@ -14,48 +14,52 @@ h5{
   color: #333333; 
 } 
 .boxForm{ 
-  width: 791px; 
+  max-width: 100%;
+  width: fit-content; 
   display: flex; 
-  flex-direction: row; 
   justify-content: space-between; 
   margin-top: 35px; 
   margin-bottom: 50px; 
+  gap:3%;
 } 
+.radioBox{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  white-space: nowrap;
+}
 .inputsBox{ 
   width: 470px; 
   height: 64px; 
   display: flex; 
-  flex-direction: row; 
-  align-items: flex-start; 
+  align-items: center; 
   padding: 0px; 
   gap: 35px; 
 } 
 .inputFilter{ 
-  width: 218px; 
-  height: 64px; 
+  width: 40%;
   font-family: 'Montserrat'; 
   font-style: normal; 
-  font-weight: 600; 
-  font-size: 30px; 
+  font-weight: 700; 
+  font-size: 15px; 
   line-height: 24px; 
   text-align: center; 
   color: #547147; 
   border-radius: 40px; 
- 
+ cursor: pointer;
   border: 1px solid #547147; 
-  padding:21px 14px 21px 14px; 
+  padding:8px 5%; 
 } 
 
 .submit{ 
-  width: 218px; 
-  height: 64px; 
-  padding:21px 14px 21px 14px; 
+  padding:8px 40px;
   text-align: center; 
   background: #547147; 
   border-radius: 40px; 
   font-family: 'Montserrat'; 
   font-weight: 700; 
-  font-size: 20px; 
+  font-size: 15px; 
   line-height: 24px; 
   color: #FFFFFF; 
   border: 1px solid #547147; 

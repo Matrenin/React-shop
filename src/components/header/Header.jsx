@@ -34,13 +34,17 @@ export const links = [
 const Header = () => {
 
   const {isAuth} = useAuth();
-
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
 
   const enterFilter = useCallback((e) => {
-    dispatch(pushText(e.target.value))
+    if (e.target.value !== "") {
+      navigate("/catalog")
+      dispatch(pushText(e.target.value))
+    } else {
+      dispatch(pushText(e.target.value))
+    }
   }, [dispatch])
 
  

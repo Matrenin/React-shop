@@ -15,6 +15,9 @@ export function Application () {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [commit, setCommit] = useState('')
+    const [errorName, setErrorName] = useState(false)
+    const [errorPhone, setErrorPhone] = useState(false)
+    const [agree, setAgree] = useState(false)
     const idApplication = nanoid()
     const modalSended = useSelector(store => store.modal.modalSended)
     const card = useSelector(store => store.card)
@@ -48,7 +51,7 @@ export function Application () {
     const handleSubmit = event => {
         event.preventDefault()
         if (!isAuth) {
-            if (name !== '' &&  phone !== '') {
+            if (!errorName && !errorPhone && phone && name && agree)  {
                 let applicationObj = {
                     [idApplication]: {
                         name,
@@ -82,6 +85,23 @@ export function Application () {
         }
     }
 
+    function checkName(event) {
+        setName(event.target.value)
+        if (/^[А-ЯЁ,\s]+$/i.test(event.target.value) && name.length) {
+            setErrorName(false)
+        } else {
+            setErrorName(true)
+        }
+    }
+    function checkPhone(event) {
+        setPhone(event.target.value)
+        if (/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(event.target.value) && phone.length) {
+            setErrorPhone(false)
+        } else {
+            setErrorPhone(true)
+        }
+    }
+
     return (
        <>
             <form className='application' onSubmit={(event) => handleSubmit(event)}>
@@ -91,25 +111,38 @@ export function Application () {
                 </div>
                 { isAuth
                     ? <p className="application__user-text">{userName ? userName : 'Имя'}</p>
-                    : <input
-                        className='application__input'
-                        type='text'
-                        placeholder='Имя' 
-                        required
-                        value={name}
-                        onChange={(event) => setName(event.target.value)}
-                    ></input>
+                    : ( errorName? <input className='application__input_false' type='text'
+                    placeholder='Имя кирилицей'
+                    required
+                    value={name}
+                    onChange={checkName}
+                ></input>
+                : <input className='application__input' type='text'
+                placeholder='Имя'
+                required
+                value={name}
+                onChange={checkName}
+            ></input>)
                 }
                 { isAuth
                     ? <p className="application__user-text">{userPhone ? userPhone : 'Телефон'}</p>
-                    : <input
-                        className='application__input'
-                        type='tel'
+                    : (errorPhone ? <input
+                        className='application__input_false'
+                        type='text'
                         placeholder='Телефон'
                         required
                         value={phone}
-                        onChange={(event) => setPhone(event.target.value)}
-                    ></input>
+                        onChange={checkPhone}
+                    ></input> :
+                        <input
+                            className='application__input'
+                            type='text'
+                            placeholder='Телефон'
+                            required
+                            value={phone}
+                            onChange={checkPhone}
+                        ></input>
+                    )
                 }
                 
                 <textarea
@@ -120,7 +153,8 @@ export function Application () {
                     onChange={(event) => setCommit(event.target.value)}
                 ></textarea>
 
-                <label className='application__checkbox' ><input className='application__checkbox__input}=' type='checkbox' ></input>
+                <label className='application__checkbox' ><input className='application__checkbox__input}=' type='checkbox' 
+                onChange={() => setAgree(!agree)}></input>
                 Отправляя заявку Вы соглашаетесь на обработку <span>персональных данных</span></label>
 
                 <button className='application__btn' type='submit'>Отправить заявку</button>

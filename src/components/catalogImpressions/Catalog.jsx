@@ -33,9 +33,11 @@ const Catalog = () => {
   }
 
   let filterName = useSelector((state) => {
+    if (state !== "") {
     return filtredCards.filter((e) =>
       e.name.match(RegExp(`${state.text}`, 'i'))
     )
+    }
   })
 
   function getCardId(cardId) {
@@ -44,9 +46,19 @@ const Catalog = () => {
     setCardModal(cards[index])
   }
 
-  const watchChange = (valueMin, valueMax) => {
+  const watchChange = (valueMin, valueMax,val) => {
     let filtredCards = cards.slice();
-    setFiltredCards(filtredCards.filter((el) => valueMin <= parseInt(el.price.match(/\d+/)) && parseInt(el.price.match(/\d+/)) <= valueMax))
+    if (val === "1") {
+      setFiltredCards(filtredCards.sort((a, b) => parseInt(a.price.match(/\d+/)) - parseInt(b.price.match(/\d+/))))
+    } else if (val === "2") {
+      setFiltredCards(filtredCards.sort((a, b) => parseInt(b.price.match(/\d+/)) - parseInt(a.price.match(/\d+/))))
+    } else {
+      setFiltredCards(filtredCards)
+    }
+    if (valueMin !== "" | valueMax !== "") {
+      setFiltredCards(filtredCards.filter((el) => valueMin <= parseInt(el.price.match(/\d+/)) && 
+      parseInt(el.price.match(/\d+/)) <= valueMax))
+    }
   }
 
 
