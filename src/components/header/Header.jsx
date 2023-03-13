@@ -24,6 +24,11 @@ export const links = [
   },
   {
     id: 3,
+    name: 'Как\u00A0это\u00A0работает',
+    to: 'howto'
+  },
+  {
+    id: 4,
     name: 'Контакты',
     to: 'contacts'
   }
@@ -33,7 +38,7 @@ export const links = [
 
 const Header = () => {
 
-  const {isAuth} = useAuth();
+  const { isAuth } = useAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -47,52 +52,52 @@ const Header = () => {
     }
   }, [dispatch])
 
- 
+
   useEffect(() => {
-     const rememberMe = localStorage.getItem('remember');
-     const auth = getAuth();
-     if (rememberMe){
-       onAuthStateChanged(auth, (user) => {
-         if (user) {
- 
-           dispatch(setUser({
-             email: user.email,
-             id: user.uid,
-             token: user.accessToken,
-             name: null
-         }));  
-         } else {
-           console.log('No user is signed in.')
-         }
-       });
-     } else {
-       signOut(auth)
-       .then(() => {
+    const rememberMe = localStorage.getItem('remember');
+    const auth = getAuth();
+    if (rememberMe) {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+
+          dispatch(setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken,
+            name: null
+          }));
+        } else {
+          console.log('No user is signed in.')
+        }
+      });
+    } else {
+      signOut(auth)
+        .then(() => {
           dispatch(removeUser());
           localStorage.removeItem('remember')
           navigate('/login');
-        }).catch ((error) => {
+        }).catch((error) => {
           console.log(error)
         })
-     }
-     // eslint-disable-next-line
-   }, [])
+    }
+    // eslint-disable-next-line
+  }, [])
 
-   /*
-   const handleLogOut = (e) => {
-    e.preventDefault();
+  /*
+  const handleLogOut = (e) => {
+   e.preventDefault();
 
-    signOut(auth)
-      .then(() => {
-        dispatch(removeUser());
-        localStorage.removeItem('remember');
-        navigate('/login');
-    }).catch ((error) => {
-      console.log(error)
-    })
+   signOut(auth)
+     .then(() => {
+       dispatch(removeUser());
+       localStorage.removeItem('remember');
+       navigate('/login');
+   }).catch ((error) => {
+     console.log(error)
+   })
 
-  }*/
-  
+ }*/
+
   return (
     <>
       <header className="header">

@@ -22,6 +22,11 @@ const links = [
   },
   {
     id: 3,
+    name: 'Как\u00A0это\u00A0работает',
+    to: 'howto'
+  },
+  {
+    id: 4,
     name: 'Контакты',
     to: 'contacts'
   }
@@ -82,10 +87,10 @@ const Footer = () => {
         </div>
       </footer>
       {
-        modalShow && 
-          <Modal>
-            <Application/>
-          </Modal>
+        modalShow &&
+        <Modal>
+          <Application />
+        </Modal>
       }
     </>)
 }
