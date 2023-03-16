@@ -30,17 +30,17 @@ const Details = ({ card }) => {
 
     const prices = [{
         id: 0,
-        price: '390 Р',
+        price: '390 ',
         mesurement: '1 час'
     },
     {
         id: 1,
-        price: '760 P',
+        price: '760 ',
         mesurement: '2 часа'
     },
     {
         id: 3,
-        price: '1100 P',
+        price: '1100 ',
         mesurement: '3 часа'
     }
     ]
@@ -63,16 +63,16 @@ const Details = ({ card }) => {
 
                 <div className={style.details__body}>
                     <h2 className={style.details__body_title} >{card.name.toUpperCase()}</h2>
-                    <div className={style.details__selectionPrice}>
-                        <h1 className={style.details__price} >{card.price} ₽</h1>
-                        {/* <button className={style.details__selection}>Менять описание</button> */}
-                    </div>
-                    <div>
-                        <h1>{selectedMesurement}</h1>
-                        <select value={selectedMesurement} onChange={e => setSelectedMesurement(e.target.value)}>
-                            {prices.map((p) => <option value={p.price}>{p.mesurement}</option>)}
-                        </select>
-                    </div>
+                    <div className={style.details__body_info}>
+                        <div className={style.details__selectionPrice}>
+                            <h1 className={style.details__price} >{selectedMesurement} ₽</h1>
+                            {/* <button className={style.details__selection}>Менять описание</button> */}
+                        </div>
+                        <div className={style.dropdownList}>
+                            <select className={style.dropdownListItem} value={selectedMesurement} onChange={e => setSelectedMesurement(e.target.value)}>
+                                {prices.map((p) => <option value={p.price}>{p.mesurement}</option>)}
+                            </select>
+                        </div></div>
                     <button className={style.details__btn} onClick={(event) => handleOpenModal(event)}>Заказать впечатление</button>
                     <div className={style.details__description}>
                         <h3>Подробнее о впечатлении: </h3>
