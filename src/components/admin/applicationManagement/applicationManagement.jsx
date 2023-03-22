@@ -15,7 +15,8 @@ const ApplicationManagementAdmin = () => {
   }, [])
 
   function filterForDate() {
-    const arrayList = Object.values(list)
+
+    const arrayList = Object.values(list).filter(e => e.date)//!!!!чтобы не было прецедентов с заявками без даты.
     if (Date.parse(arrayList[0].date) >= Date.parse(arrayList[arrayList.length - 1].date)) {
       const sortList = arrayList.sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
       setList(Object.assign(sortList))
@@ -28,10 +29,8 @@ const ApplicationManagementAdmin = () => {
   }
 
   function filterForStatus() {
-    console.log(list);
     const arrayList = Object.values(list)
     const mapping = arrayList.map((e) => {
-      console.log(e.status);
       if ("status" in e) {
         if (e.status.status === "В обработке") {
           e.controlIndex = "1"
@@ -47,7 +46,6 @@ const ApplicationManagementAdmin = () => {
       }
       return e
     })
-    console.log(mapping);
     if (mapping[0].controlIndex > mapping[mapping.length - 1].controlIndex) {
       const sortList = mapping.sort((a, b) => a.controlIndex - b.controlIndex)
       setList(Object.assign(sortList))
@@ -126,7 +124,7 @@ const ApplicationManagementAdmin = () => {
               <div className="applicationManagmentAdmin__item_iner-title">Статус</div>
               {(list[key].status?.status === "В обработке" && <div className="applicationManagmentAdmin__item_iner-key yellow">{list[key].status?.status}</div>) ||
                 (list[key].status?.status === "Отменить" && <div className="applicationManagmentAdmin__item_iner-key rose">{list[key].status?.status}</div>) ||
-                (list[key].status?.status === `Завершена` && <div className="applicationManagmentAdmin__item_iner-key green">{list[key].status?.status}</div>) ||
+                (list[key].status?.status === "Завершена" && <div className="applicationManagmentAdmin__item_iner-key green">{list[key].status?.status}</div>) ||
                 (list[key].status?.status === undefined && <div className="applicationManagmentAdmin__item_iner-key ">{list[key].status?.status}</div>)}
             </div>
             <div className="applicationManagmentAdmin__item_iner">
