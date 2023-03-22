@@ -20,6 +20,7 @@
     &__radioBox {
         & label {
             display: flex;
+            align-items: center;
 
             & span {
                 font-style: normal;
@@ -27,11 +28,24 @@
                 font-size: 14px;
                 line-height: 16px;
                 color: #FFFFFF;
+                pointer-events: none;
+                &.arrow{
+                    color: #547147;
+                }
             }
         }
     }
 }
-
+.radio{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    &:hover {
+        box-shadow: 0px 0px 4px 4px #547147 inset;
+        border:1px #FFFFFF solid  ;
+      }
+}
 .applicationManagmentAdmin {
     font-family: 'Montserrat', Times, serif;
     display: flex;
@@ -59,6 +73,7 @@
             height: 90px;
             width: 136px;
             border-right: 1px solid #404936;
+            
 
             &-title {
                 display: flex;
@@ -92,7 +107,7 @@
                 font-size: 12px;
                 line-height: 20px;
                 color: #333333;
-
+                
                 &-input {
                     width: 100%;
                     height: 100%;
@@ -127,4 +142,13 @@
             }
         }
     }
+}
+.yellow{
+    background-color: #d3e63060;
+}
+.green{
+    background-color: #84b86d60;
+}
+.rose{
+    background-color: #bc8f8f60;
 }
