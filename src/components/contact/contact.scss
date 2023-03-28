@@ -17,13 +17,64 @@
     &__tall {
       font-weight: 800;
     }
+
     &__a {
       text-decoration: none;
       color: #547147;
     }
   }
 }
+
 .form {
   border-radius: 1.25rem;
-  box-shadow: 0 20px 40px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (max-width: 1130px) {
+  .contact {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+
+    &__text {
+      font-size: 24px;
+      line-height: 34px;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    flex-direction: column;
+    padding: 50px 20px 60px 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 30px;
+
+    &__text {
+      min-width: 40%;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      flex-direction: column;
+      gap: 15px;
+
+      &__tall {
+        text-align: center;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 25px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .num {
+    text-align: left !important;
+    margin-bottom: 0px !important;
+  }
 }

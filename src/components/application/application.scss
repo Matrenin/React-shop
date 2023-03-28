@@ -5,9 +5,9 @@
     max-width: 550px;
     padding: 30px;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     gap: 20px;
-    
+
     &__head {
         margin: 0 0 10px;
         font-family: 'Montserrat';
@@ -35,7 +35,7 @@
 
     &__input,
     &__user-text {
-        width: 440px;
+        width: 100%;
         border: 1px solid #C2C2C2;
         border-radius: 10px;
         padding: 20px 15px;
@@ -50,7 +50,8 @@
             outline: none;
             border: 1px solid #547147
         }
-        &_false{
+
+        &_false {
             border: 4px solid #e21010;
             padding: 20px 15px;
         }
@@ -70,7 +71,7 @@
             margin-right: 10px;
         }
     }
-    
+
     &__btn {
         background: #547147;
         border-radius: 40px;
@@ -82,29 +83,70 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;
-        
-        &:hover{
+
+        &:hover {
             background: #FFFFFF;
             border: 1px solid #547147;
             color: #547147;
         }
-        &:active{
+
+        &:active {
             background: #547147;
             border: 1px solid #FFFFFF;
             color: #FFFFFF;
         }
     }
 }
+
+
+@media only screen and (max-width: 1130px) {
+    .application {
+        max-width: 440px;
+
+        &__head {
+            font-size: 26px;
+        }
+
+        &__input,
+        &__user-text {
+            width: 380px;
+            padding: 18px 15px;
+        }
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .application {
+        max-width: 100%;
+        margin: 0 auto;
+
+        &__head {
+            &__title {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        &__input,
+        &__user-text {
+            width: 100%;
+            padding: 16px 15px;
+        }
+    }
+}
+
+
 @media (max-width: 500px) {
-    .application{
+    .application {
         max-width: 335px;
         padding: 20px;
 
-        &__head{
+        &__head {
             font-size: 24px;
             line-height: 28px;
 
-            &__subtitle{
+            &__subtitle {
                 font-size: 14px;
                 line-height: 18px;
             }
@@ -112,23 +154,23 @@
 
         &__user-text {
             width: 275px;
-            padding:15px;
+            padding: 15px;
             font-size: 14px;
             line-height: 18px;
 
-            &_false{
-                padding:15px;
+            &_false {
+                padding: 15px;
             }
         }
 
-        &__checkbox{
+        &__checkbox {
             margin-top: 31px;
         }
 
-        &__btn{
+        &__btn {
             padding: 11px 22px;
             font-size: 14px;
             line-height: 18px;
         }
-    } 
+    }
 }

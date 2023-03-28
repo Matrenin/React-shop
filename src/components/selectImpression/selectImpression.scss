@@ -1,5 +1,5 @@
 .selectImpression {
-  width: 440px;
+  width: 100%;
   background: #F6F1E4;
   border: 1px solid #C2C2C2;
   border-radius: 10px;
@@ -59,9 +59,21 @@
   transform: rotate(180deg);
 }
 
+@media only screen and (max-width: 1130px) {
+  .selectImpression {
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .selectImpression {
+    width: 100%;
+  }
+}
+
 @media (max-width: 500px) {
   .selectImpression {
-    width: 275px;
+    width: 100%;
     padding: 10px;
   }
 
