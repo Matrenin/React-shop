@@ -46,13 +46,13 @@ const Footer = () => {
         <div className="footer__box container">
           <div className="footer__row">
             <div className="footer__column">
-              <img src={flogo} alt="flogo" />
+              <img className="footer__logo" src={flogo} alt="flogo" />
               <p className="footer__column-allright">Все права защищены<br />
                 © Дари Душой, 2023 г.
               </p>
             </div>
 
-            <div className="footer__column">
+            <div className="footer__column menu">
               <h2>Меню</h2>
               <div className="footer__column-nav">
                 {links.map(link => (
@@ -69,7 +69,7 @@ const Footer = () => {
                 }</div>
             </div>
 
-            <div className="footer__column">
+            <div className="footer__column number">
               <h1>+7 (999) 123-45-67</h1>
               <div className="footer__column-link">
                 <a href="https://instagram.com/daridushoy/"><img src={vk} alt="vk" /></a>
@@ -77,7 +77,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="footer__column">
+            <div className="footer__column questions">
               <h1>Остались вопросы?</h1>
               <p className="footer__column-text">Оставьте заявку, мы свяжемся с Вами <br /> в ближайшее время</p>
               <button onClick={handleShowModal}>Оставить заявку</button>
