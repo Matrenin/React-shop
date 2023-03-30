@@ -4,11 +4,6 @@ import Comment from './Comment';
 import axios from 'axios';
 import './commetnsManagement.scss'
 import { editUserCommentAdmin } from '../../../services/firebase'
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
 
 const CommentsManagementAdmin = () => {
 
@@ -31,15 +26,23 @@ const CommentsManagementAdmin = () => {
     fetchCards()
   }, [])
 
+ 
+
   const deleteComment = (idComment) => {
     editUserCommentAdmin(idComment)
+      const commentsNew = comments.slice(0)
+      const commentsIdNew = commentsId.slice(0)
+      const idDelete = commentsId.indexOf(idComment)
+      commentsIdNew.splice(idDelete, 1)
+      commentsNew.splice(idDelete, 1)
+      setComments(commentsNew)
+      setCommentsId(commentsIdNew)
   }
 
   async function fetchCards() {
     const cards = await axios.get('https://kaori318.github.io/site/cards.json')
     setCards(cards.data)
   }
-<<<<<<< Updated upstream
 
   function filterAmount() {
     if (comments.length > 0) {
@@ -55,23 +58,6 @@ const CommentsManagementAdmin = () => {
     }
   }
 
-=======
-
-  function filterAmount() {
-    if (comments.length > 0) {
-      if (comments[0].rating > comments[comments.length - 1].rating) {
-        const sortComments = comments.sort((a, b) => a.rating - b.rating)
-        setComments(sortComments)
-        setArrowAmmount('1')
-      } else {
-        const sortComments = comments.sort((a, b) => b.rating - a.rating)
-        setComments(sortComments)
-        setArrowAmmount('2')
-      }
-    }
-  }
-
->>>>>>> Stashed changes
   function filterDate() {
     if (comments.length > 0) {
       if (Date.parse(comments[0].date) > Date.parse(comments[comments.length - 1].date)) {

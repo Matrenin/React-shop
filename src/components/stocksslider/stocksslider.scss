@@ -1,126 +1,236 @@
 .stocks {
-  font-family: 'Montserrat', Times, serif;
-
-  .stocksSlider {
-      max-width: 1300px;
-      max-height: 450px;
-      background-image: url(../../assets/stocks/stocksBack.png);
-      background-repeat: no-repeat;
-      background-position: inherit;
-      background-size: cover;
-      margin: 0px auto 50px;
-      border-radius: 20px;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
+    .stocksSlider {
+        max-width: 1300px;
+        max-height: 450px;
+        background-image: url(../../assets/stocks/stocksBack.png);
+        background-repeat: no-repeat;
+        background-position: inherit;
+        background-size: cover;
+        margin: 0px auto 50px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
 
 
-      &__info {
-          &_action {
-              color: #FFFFFF;
-              font-weight: 500;
-              font-size: 30px;
-              line-height: 34px;
-              padding: 15px 50px 15px 60px;
-              background-image: url(../../assets/stocks/actionBack.png);
-              background-repeat: no-repeat;
-              background-size: contain;
-              margin-top: 45px;
-          }
+        &__info {
+            &_action {
+                color: #FFFFFF;
+                font-weight: 500;
+                font-size: 30px;
+                line-height: 34px;
+                padding: 15px 50px 15px 60px;
+                background-image: url(../../assets/stocks/actionBack.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-top: 45px;
+            }
 
-          & h2 {
-              font-weight: 700;
-              font-size: 50px;
-              line-height: 54px;
-              color: #404936;
-              text-transform: uppercase;
-              max-width: 600px;
-              margin: 20px 0 0 60px;
-          }
+            & h2 {
+                font-weight: 700;
+                font-size: 50px;
+                line-height: 54px;
+                min-width: 415px;
+                color: #404936;
+                text-transform: uppercase;
+                max-width: 600px;
+                margin: 20px 0 0 60px;
+            }
 
-          &_price {
-              font-weight: 700;
-              font-size: 35px;
-              line-height: 34px;
-              color: #404936;
-              margin: 25px 0 0 60px;
+            &_price {
+                font-weight: 700;
+                font-size: 35px;
+                line-height: 34px;
+                color: #404936;
+                margin: 25px 0 0 60px;
 
-              & span {
-                  color: #A3A3A3;
-                  font-weight: 500;
-                  font-size: 26px;
-                  line-height: 34px;
-                  text-decoration: line-through;
-                  padding-right: 32px;
-              }
-          }
+                & span {
+                    color: #A3A3A3;
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 34px;
+                    text-decoration: line-through;
+                    padding-right: 32px;
+                }
+            }
 
-          &_btn {
-              font-weight: 700;
-              font-size: 20px;
-              line-height: 24px;
-              text-align: center;
-              color: #FFFFFF;
-              padding: 12px 24px;
-              background-color: #547147;
-              border-radius: 40px;
-              margin: 31px 0 0 60px;
-              text-decoration: none;
-              border: none;
-              cursor: pointer;
+            &_btn {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+                color: #FFFFFF;
+                padding: 12px 24px;
+                background-color: #547147;
+                border-radius: 40px;
+                margin: 31px 0 0px 60px;
+                text-decoration: none;
+                border: none;
+                cursor: pointer;
 
-              &:hover {
-                  color: #547147;
-                  background-color: #FFFFFF;
-                  border: 1px solid #547147;
-              }
+                &:hover {
+                    color: #547147;
+                    background-color: #FFFFFF;
+                    border: 1px solid #547147;
+                }
+            }
+        }
 
-          }
+        &__imgBlock {
+            position: relative;
+            overflow: hidden;
+            padding-left: 35px;
+
+            &_img {
+                clip-path: polygon(17% 0, 100% 0, 100% 100%, 2% 100%);
+            }
+        }
+
+        &__imgBlock::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            height: 121%;
+            transform: rotate(9deg);
+            top: -20px;
+            padding-left: 45px;
+            background-color: #547147;
+        }
+
+        &__box-btns {
+            position: absolute;
+            bottom: 30px;
+            right: 50%;
+            display: flex;
+            gap: 20px;
+
+            &-btn {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #547147;
+                background: transparent;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .stocksSlider__btn-active {
+        background: #547147;
+    }
+}
+
+@media only screen and (max-width: 855px) {
+    .stocks {
+        .stocksSlider {
+            &__box-btns {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .stocks {
+
+        .stocksSlider {
+            max-width: 335px;
+            max-height: 701px;
+            margin: 0px auto 50px;
+            flex-direction: column;
+
+            &__info {
+                &_action {
+                    width: 239px;
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 8px 20px 15px 20px;
+                    margin-top: 30px;
+                }
+
+                & h2 {
+                    font-weight: 800;
+                    font-size: 38px;
+                    line-height: 42px;
+                    min-width: 287px;
+                    margin: 20px 28px 20px 30px;
+                }
+
+                &_price {
+                    font-size: 30px;
+                    line-height: 34px;
+                    margin: 0px 80px 25px 20px;
+
+                    & span {
+                        font-size: 22px;
+                        line-height: 26px;
+                        padding-right: 30px;
+                    }
+                }
+
+                &_btn {
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    padding: 11px 22px;
+                    width: 295px;
+                    margin: 0px 0 0 20px;
+
+                    &:hover {
+                        color: #547147;
+                        background-color: #FFFFFF;
+                        border: 1px solid #547147;
+                    }
+
+                }
 
 
-      }
+            }
 
-      &__imgBlock {
-          position: relative;
-          overflow: hidden;
-          padding-left: 35px;
+            &__imgBlock {
+                position: relative;
+                overflow: hidden;
+                padding-top: 20px;
+                padding-left: 0;
+                border-radius: 20px;
 
-          &_img {
-              clip-path: polygon(17% 0, 100% 0, 100% 100%, 2% 100%);
-          }
-      }
 
-      &__imgBlock::before {
-          content: "";
-          position: absolute;
-          z-index: 1;
-          height: 121%;
-          transform: rotate(9deg);
-          top: -20px;
-          padding-left: 45px;
-          background-color: #547147;
-      }
+                &_img {
+                    width: 100%;
+                    padding-top: 25px;
+                    clip-path: polygon(0 2%, 100% 17%, 100% 100%, 0% 100%);
+                }
+            }
 
-      &__box-btns {
-          position: absolute;
-          bottom: 30px;
-          right: 50%;
-          display: flex;
-          gap: 20px;
+            &__imgBlock::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                height: 10%;
+                width: 100%;
+                transform: rotate(9deg);
+                top: 50px;
+                left: -5px;
+                padding-left: 45px;
+                background-color: #547147;
+            }
 
-          &-btn {
-              width: 20px;
-              height: 20px;
-              border: 2px solid #547147;
-              background: transparent;
-              border-radius: 50%;
-              cursor: pointer;
-          }
+            &__box-btns {
+                bottom: 20px;
+                right: 43%;
+                display: flex;
+                gap: 10px;
 
-      }
-  }
+                &-btn {
+                    width: 10px;
+                    height: 10px;
+                    border: 2px solid #FFFFFF;
+                }
+            }
+        }
 
-  .stocksSlider__btn-active {
-      background: #547147;
-  }
+        .stocksSlider__btn-active {
+            background: #FFFFFF;
+        }
+    }
 }

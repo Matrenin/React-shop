@@ -1,6 +1,4 @@
 .howto {
-    font-family: 'Montserrat', Times, serif;
-
     & h1 {
         font-style: normal;
         font-weight: 700;
@@ -18,13 +16,14 @@
         font-size: 30px;
         line-height: 37px;
         color: #404936;
-        padding: 0 48px 20px;
+        padding: 0 56px 20px;
     }
 
     & span {
         font-style: normal;
         font-weight: 700;
         font-size: 30px;
+        min-width: 2px;
         line-height: 30px;
         color: #547147;
     }
@@ -35,7 +34,7 @@
         font-size: 20px;
         line-height: 24px;
         color: #404936;
-        padding: 0 48px 45px;
+        padding: 0 56px 45px;
     }
 
     &__Box {
@@ -45,18 +44,24 @@
         padding-bottom: 45px;
 
         &Iner {
+
+            & h2 {
+                padding: 0px 20px 25px;
+            }
+
             margin: 0 auto;
             box-sizing: border-box;
-            width: 620px;
+            max-width: 620px;
+            min-width: 337px;
             background: #FFFFFF;
             outline: 1px solid #547147;
             border-radius: 20px;
-            padding-bottom: 30px;
 
             &Title {
                 display: flex;
                 margin: 50px;
                 gap: 30px;
+                min-width: 540px;
 
                 & img {
                     display: flex;
@@ -66,8 +71,59 @@
                 }
             }
         }
-
     }
+}
+
+@media only screen and (max-width: 620px) {
+    .howto {
+        & h1 {
+            font-size: 21px;
+            line-height: 25px;
+            padding: 40px 0 50px;
+        }
+
+        & h2 {
+            font-size: 18px;
+            line-height: 22px;
+            min-width: 337px;
+            padding: 0px 0px 10px;
+        }
+
+        & span {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        & p {
+            font-size: 16px;
+            line-height: 20px;
+            min-width: 337px;
+            padding: 0px 0px 30px;
+        }
+
+        &__Box {
+            gap: 30px;
+            padding: 0px 0px 30px;
+
+            &Iner {
+
+                & h2 {
+                    padding: 0px 10px 25px;
+                }
+
+                &Title {
+                    min-width: 294px;
+                    margin: 20px;
+                    gap: 10px;
+
+                    & img {
+                        width: 50px;
+                        height: 50px;
+                    }
 
 
+                }
+            }
+        }
+    }
 }

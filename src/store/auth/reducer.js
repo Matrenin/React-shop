@@ -14,6 +14,7 @@ const initialState = {
 
 export const userReducer = (state = initialState, action) => {
     const { type, payload } = action
+    const {comments} = state
 
     switch(type) {
        
@@ -70,9 +71,19 @@ export const userReducer = (state = initialState, action) => {
             return obj
 
         case types.ADD_AUTH_COMMENT:
-            let comments = Object.assign({}, state)
-            comments.comments = {...comments.comments, ...payload}
-            return comments
+            const newComments = {...comments, ...payload}
+            return {
+                ...state,
+                comments: newComments
+            }
+
+       case types.DELETE_AUTH_COMMENT:
+            const newCommentsList = {...comments}
+            delete newCommentsList[payload]
+            return {
+                ...state,
+                comments: newCommentsList
+            }
 
         default:
             return state

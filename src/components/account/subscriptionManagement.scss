@@ -25,6 +25,7 @@
     color: #404936;
     .span-info {
         font-weight: 700;
+        color: #404936;
     }
 }
 .button-subscribe{
@@ -57,4 +58,26 @@
     color:#DFA650 ;
     font-size: 20px;
 }
+@media(max-width:500px){
+    .history{
+        margin: 0;
+
+    }
+    .info{
+        margin: 50px 0;
+        img{
+            width: 70px;
+            height: 70px;
+        }
+        .text-info{
+            margin: 20px 22px 40px 22px;
+            text-align: center;
+        }
+    }
+    .button-subscribe{
+        height: 48px;
+        //margin-top: 5px;
+    }
+}
+
 

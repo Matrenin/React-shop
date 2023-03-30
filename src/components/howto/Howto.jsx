@@ -23,7 +23,7 @@ const HowtoContent = () => {
         <div className='howto__BoxIner'>
           <div className='howto__BoxInerTitle'>
             <img src={certificates} alt="certificates" />
-            <span>Cертификат в&nbsp;дизайнерском&nbsp;конверте с доставкой на дом</span>
+            <span>Cертификат в&nbsp;дизайнерском конверте с доставкой на дом</span>
           </div>
           <h2>3. Мы привезем сертификат на дом в удобное время</h2>
           <h2>4. Оплатить сертификат при получении можно как в наличном, так и в безналичном&nbsp;виде</h2>

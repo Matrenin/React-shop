@@ -71,7 +71,7 @@ const Header = () => {
                 phone: dataUser.phone?.phone || null,
                 applications: dataUser?.applications || {},
                 subscribe: dataUser.subscribe?.subscribe || null,
-                comments: dataUser.comments?.comments || {},
+                comments: dataUser?.comments || {},
 
               }));
             })

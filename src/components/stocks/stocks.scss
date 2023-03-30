@@ -1,5 +1,4 @@
 .stocks {
-    font-family: 'Montserrat', Times, serif;
 
     & h1 {
         font-weight: 700;
@@ -41,6 +40,7 @@
                 font-weight: 700;
                 font-size: 50px;
                 line-height: 54px;
+                min-width: 415px;
                 color: #404936;
                 text-transform: uppercase;
                 max-width: 600px;
@@ -83,7 +83,6 @@
                     background-color: #FFFFFF;
                     border: 1px solid #547147;
                 }
-
             }
         }
 
@@ -106,6 +105,96 @@
             top: -20px;
             padding-left: 45px;
             background-color: #547147;
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .stocks {
+
+        & h1 {
+            font-size: 21px;
+            line-height: 25px;
+            padding: 40px 0 50px;
+        }
+
+        .stockSlider {
+            max-width: 335px;
+            max-height: 701px;
+            margin: 0px auto 50px;
+            flex-direction: column;
+
+            &__info {
+                &_action {
+                    width: 239px;
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding: 8px 20px 15px 20px;
+                    margin-top: 30px;
+                }
+
+                & h2 {
+                    font-weight: 800;
+                    font-size: 38px;
+                    line-height: 42px;
+                    min-width: 287px;
+                    margin: 20px 28px 20px 30px;
+                }
+
+                &_price {
+                    font-size: 30px;
+                    line-height: 34px;
+                    margin: 0px 80px 25px 20px;
+
+                    & span {
+                        font-size: 22px;
+                        line-height: 26px;
+                        padding-right: 30px;
+                    }
+                }
+
+                &_btn {
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    padding: 11px 22px;
+                    width: 295px;
+                    margin: 0px 0 0 20px;
+
+                    &:hover {
+                        color: #547147;
+                        background-color: #FFFFFF;
+                        border: 1px solid #547147;
+                    }
+                }
+            }
+
+            &__imgBlock {
+                position: relative;
+                overflow: hidden;
+                padding-top: 20px;
+                padding-left: 0;
+                border-radius: 20px;
+
+                &_img {
+                    width: 100%;
+                    padding-top: 25px;
+                    clip-path: polygon(0 2%, 100% 17%, 100% 100%, 0% 100%);
+                }
+            }
+
+            &__imgBlock::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                height: 10%;
+                width: 100%;
+                transform: rotate(9deg);
+                top: 50px;
+                left: -5px;
+                padding-left: 45px;
+                background-color: #547147;
+            }
         }
     }
 }
