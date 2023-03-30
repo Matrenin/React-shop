@@ -1,9 +1,8 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import React, { useEffect, useCallback } from 'react'
-
 import './header.scss'
-
+import './adaptiveHeader.scss'
 import imgLogo from '../../assets/logo.png'
 import imgSearch from '../../assets/search.png'
 
@@ -12,6 +11,7 @@ import { removeUser, setUser } from '../../store/auth/action'
 import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth'
 import { pushText } from '../../store/filterName/actions'
 import { getUserValue } from '../../services/firebase'
+import AdaptiveHeader from './AdaptiveHeader'
 
 export const links = [
   {
@@ -97,6 +97,7 @@ const Header = () => {
 
   return (
     <>
+      <AdaptiveHeader/>
       <header className="header">
         <div className="header__nav container">
           <NavLink to="/" className="header__nav-logo">

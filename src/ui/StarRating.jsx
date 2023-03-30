@@ -1,8 +1,17 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
+import { styled } from '@mui/system';
 
-export default function StarRating({ rating, selectRating }) {
+const StyledBox = styled(Box)({
+  '& .MuiRating-icon': {
+    fontSize: '1.65rem',
+    cursor: 'pointer',
+  },
+});
+
+const StarRating = ({ rating, selectRating }) => {
+
 
   const setRating = value => {
     selectRating(value)
@@ -24,3 +33,5 @@ export default function StarRating({ rating, selectRating }) {
     </Box>
   );
 }
+
+export default StarRating

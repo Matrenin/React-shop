@@ -7,6 +7,8 @@
   position: absolute;
   z-index: 20;
 
+  
+
   &__main {
     height: 22px;
     display: flex;
@@ -57,4 +59,28 @@
 
 .selectImpression__arrow-rotate {
   transform: rotate(180deg);
+}
+
+
+@media (max-width: 1058px) {
+  .selectImpression {
+    width: 275px;
+  }
+}
+
+@media (max-width: 870px) {
+    .selectImpression {
+      width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .selectImpression {
+    
+    //padding: 10px;
+    font-weight: 400;
+    //font-size: 14px;
+    //line-height: 18px;
+  }
+
 }

@@ -18,17 +18,34 @@
     align-items: center;
     gap: 35px;
     border-bottom: 1px solid #547147;
+
+    @media (max-width: 340px) {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 0;
+    }
   }
 
   &__wrapper {
     margin-top:50px;
+    width: 100%;
+
+    @media (max-width: 900px) {
+      padding: 0 18px;
+    }
   }
 
   &__input-item {
-    width: 465px;
+    width: 100%;
+    max-width: 465px;
     margin: 0 auto 36px;
     display: flex;
     align-items: center;
+
+    @media (max-width: 900px) {
+        position: relative;
+        margin: 0 auto 48px;
+    }
 
     & span {
       font-weight: 500;
@@ -36,8 +53,40 @@
       line-height: 18px;
       color: #547147;
       width: 56px;
+
+      @media (max-width: 900px) {
+        position: absolute;
+        bottom: 52px;
+      } 
     }
 
+     &_name {
+      @media (max-width: 900px) {
+        left: 40%;
+      }
+       @media (max-width: 350px) {
+        left: 37%;
+       }
+    }
+
+    &_phone {
+      @media (max-width: 900px) {
+        left: 37%;
+      }
+      @media (max-width: 350px) {
+        left: 31%;
+       }
+    }
+    
+    &_mail {
+      @media (max-width: 900px) {
+        left: 40.5%;
+      }
+      @media (max-width: 350px) {
+        left: 36.5%;
+       }
+    }
+    
     & p,
     & input {
       border: 1px solid #C2C2C2;
@@ -48,6 +97,13 @@
       display: flex;
       align-items: center;
       padding-left: 12px;
+    }
+
+    & p {
+      @media (max-width: 900px) {
+        width: 100%;
+        margin: 0 10px 0 0;
+      }
     }
 
     & button {
@@ -74,6 +130,12 @@
       color: #547147;
       background-color: #FFFFFF;
       border: 1px solid #547147;
+    }
+
+    @media (max-width: 900px) {
+        font-size: 16px;
+        line-height: 18px;
+        margin: 0 auto 58px;
     }
   }
 

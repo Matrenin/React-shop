@@ -59,3 +59,28 @@
     }
   }
 }
+@media (max-width: 500px) {
+  .sended {
+    max-width: 325px;
+    max-height: 485px ;
+    & img {
+      margin-top:80px;
+    }
+  
+    &__text {
+      margin-top: 40px;
+      font-size: 24px;
+      line-height: 26px;
+    }
+  
+    &__info {
+      margin-top: 20px;
+      text-align: center;
+      width: 220px;
+    }
+  
+    &__logo {
+      margin-top: 70px;
+    }
+}
+}

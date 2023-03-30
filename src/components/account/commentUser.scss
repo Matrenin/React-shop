@@ -8,6 +8,14 @@
   flex-direction: column;
   align-items: center;
 
+  &__wrraper {
+    display: flex;
+    flex-direction: column;
+    max-width: 860px;
+    width: 100%;
+  }
+  padding: 0 20px;
+
   & h3 {
     margin-top: 30px;
     font-family: 'Montserrat';
@@ -22,9 +30,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 55px auto 22px;
+    margin: 55px auto 0;
   }
-
+  &__rating {
+    & span {
+      padding: 0;
+    }
+  }
   &__item {
     display: flex;  
     margin-bottom: 17px;
@@ -38,6 +50,7 @@
       font-size: 14px;
       line-height: 20px;
       color: #547147;
+      
     }
 
     &-select {
@@ -45,8 +58,14 @@
       top: 0;
     }
 
+    &__raiting {
+      display: flex;
+      align-items: center;
+    }
+    
     & input {
-      width: 440px;
+      max-width: 440px;
+      width: 100%;
       height: 52px;
       background: #FFFFFF;
       border: 1px solid #C2C2C2;
@@ -55,16 +74,117 @@
     }
 
     & textarea {
-      width: 440px;
+      max-width: 440px;
+      width: 100%;
       height: 220px;
       background: #FFFFFF;
       border: 1px solid #C2C2C2;
       border-radius: 10px;
       padding: 6px 12px;
+      resize: none;
     }
+  }
+
+  &__btn-save {
+    width: 100%;
+    max-width: 468px;
+    margin: 0 auto 25px;
+    height: 54px;
+    border: none;
+    background: #547147;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    &:hover {
+      color: #547147;
+      background-color: #FFFFFF;
+      border: 1px solid #547147;
+    }
+  }
+
+  &__btn-myComments {
+    margin: 0 auto 15px;
+    max-width: 468px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #547147;
+    border-radius: 10px;
+    height: 44px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #547147;
   }
 }
 
 .comment-textarea {
   margin-top: 31px;
+ 
 }
+
+@media (max-width: 870px) {
+  .commentUser {
+    padding: 0 20px 15px;
+    gap: 15px;
+  
+    & h3 {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      gap: 25px;
+    }
+
+    &__item {
+      margin: 0;
+      
+      &-input {
+        flex-direction: column;
+        gap: 5px; 
+        width: 100%;
+      }
+
+      & input {
+        height: 48px;
+       
+      }
+
+      & textarea {
+        height: 176px;
+       
+        
+      }
+    }
+
+    &__btn-save {
+      margin: 0;
+      width: 100%;
+      height: 44px;
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &__btn-myComments {
+      margin: 0 auto 0;
+    }
+  }
+  .comment-textarea {
+    margin-top: 44px;
+  }
+  
+
+}
+

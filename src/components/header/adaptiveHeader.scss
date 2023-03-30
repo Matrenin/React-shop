@@ -1,0 +1,188 @@
+@media (max-width: 1100px) {
+
+  .header {
+    display: none;
+  }
+  
+  .adaptiveHeader {
+    display: flex;
+    border-bottom: 1px solid #547147;
+    margin: 0 20px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & button {
+        border: none;
+        background: transparent;
+      }
+    }
+
+    &__auth {
+      display: block;
+      justify-self: end;
+      width: 30px;
+      height: 30px;
+      background-image: url("../../assets/personalArea.png");
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+
+    // блок поиска
+    &__search {
+      position: fixed;
+      // top: -65px;
+      width: 100%;
+      transition: .2s;
+
+      &-show {
+        z-index: 10;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 65px;
+        background: #547147;
+        transition: .8s;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & input {
+          width: 270px;
+          height: 38px;
+          outline: none;
+          border-radius: 40px;
+          border: 1px solid #FFFFFF;
+          padding: 10px 24px;
+        }
+
+        & button {
+          border: none;
+          background: transparent;
+        }
+      }
+    }
+
+    // блок меню
+    &__menu {
+      position: fixed;
+      visibility: hidden;
+      width: 0;
+      transition: .1s;
+
+      &-show {
+        z-index: 20;
+        position: fixed;
+        width: 100%;
+        visibility: visible;
+        transition: .6s;
+        height: 100vh;
+        background: #fff;
+
+        &-top {
+          background: #547147;
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        &-close {
+          border: none;
+          background: transparent;
+          justify-self: end;
+          margin: 10px 15px;
+        }
+
+        &-nav {
+          margin: 70px 0 70px 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+        }
+
+        &-link {
+          text-decoration: none;
+          color: #fff;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+          width: 126px;
+        }
+
+        &-linkLK {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-top: 40px;
+        }
+
+        &-question {
+          padding: 0 20px 30px;
+
+          & h3 {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+            color: #FFFFFF;
+          }
+
+          & p {
+            max-width: 335px;
+            width: 100%;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #FFFFFF;
+            margin-top: 15px;
+          }
+
+          & button {
+            margin-top: 20px;
+            width: 170px;
+            height: 40px;
+            background: #fff;
+            border-radius: 40px;
+            border: none;
+            font-size: 14px;
+            line-height: 18px;
+            color: #547147;
+          }
+        }
+
+        &-bot {
+          padding: 20px;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &-contact {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        &-social {
+          display: flex;
+          gap: 20px;
+        }
+
+        &-logo {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}

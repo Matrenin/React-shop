@@ -1,37 +1,84 @@
 .sertificates {
   font-family: 'Montserrat', Times, serif;
   max-width: 1300px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  margin-bottom: 100px;
+  margin: 100px auto;
+  min-height: 465px;
   color: #333333;
-
-//&__img {}
+  padding: 0 10px;
+  h3 {
+    float: right;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+      max-width: 620px;
+      margin-top: 70px;
+  }
+  &__img {
+    display: flex;
+    justify-content: center;
+    float: left;
+    img {
+      max-width: 100%;  
+    }
+  }
   &__info {
-      max-width: 560px;
-
-      & h3 {
-          font-weight: 700;
-          font-size: 40px;
-          line-height: 50px;
-      }
-
+      max-width: 620px;
+      float: right;
       & ul{
           list-style-image: url(../../assets/stocks/ellipse.svg);
           font-weight: 400;
           font-size: 16px;
           line-height: 20px;
           padding-left: 17px;
-          
           & li {
              padding-top: 15px;
-
              &:first-child{
               padding-top: 30px;
              }
           }
       }
+  }
+}
+
+@media (max-width: 1280px) {
+  .sertificates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      margin: 0 0 30px;
+      text-align: center;
+      max-width: 100%;
+    }
+    &__info {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .sertificates {
+    margin-bottom: 50px;
+    h3 {
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 25px;
+    }
+    &__info {
+      max-width: 100%;
+      margin: 0 10px;
+      & ul{
+          font-size: 14px;
+          line-height: 18px;
+          padding-left: 10px;
+          & li {
+             padding-top: 15px;
+             &:first-child{
+              padding-top: 20px;
+             }
+          }
+      }
+  }
   }
 }

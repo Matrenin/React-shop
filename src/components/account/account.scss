@@ -9,6 +9,7 @@
     margin-top: 53px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
   }
 
   &__sideBar {
@@ -17,6 +18,11 @@
     border: 1px solid #547147;
     backdrop-filter: blur(25px);
     border-radius: 20px;
+    height: 568px;
+
+    @media (max-width: 690px) {
+      max-width: 100%;
+    }
 
     &-wrapper {
       display: flex;
@@ -24,6 +30,15 @@
       max-width: 304px;
       width: 100%;
       margin: 107px auto 121px;
+
+      @media (max-width: 900px) {
+        padding: 0 10px;
+      }
+
+      @media (max-width: 690px) {
+        max-width: 440px;
+        padding: 0 15px;
+      }
 
       &-link {
         width: 100%;
@@ -48,6 +63,13 @@
           background-color: #FFFFFF;
           border: 1px solid #547147;
         }
+        
+        @media (max-width: 900px) {
+          font-size: 16px;
+          line-height: 18px;
+        }
+
+
       }
     }
 
@@ -61,6 +83,11 @@
       border: none;
       background: transparent;
       cursor: pointer;
+
+      @media (max-width: 900px) {
+        font-size: 16px;
+        line-height: 18px;
+      }
     }
   }
 }
@@ -68,4 +95,16 @@
 .active {
   color: #547147;
   background: #FFFFFF;
+}
+
+@media (max-width: 690px) {
+  .account {
+    margin: 76px auto 60px;
+    
+    &__box {
+      flex-direction: column;
+      margin-top: 35px;
+      gap: 30px;
+    }
+}
 }

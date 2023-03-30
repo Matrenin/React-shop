@@ -23,10 +23,14 @@ const Card = ({ card, setInfo, cardId }) => {
           src={card.img}
           alt={card.title} />
       </div>
-      <div className={style.card__block}>
-        <div className={style.card__title} onClick={handleOpenDetails}>
-          {card.name}
-        </div>
+      <div className={style.card__block}>  
+        {card.namemobile
+        ?<div>
+          <div  className={style.card__title__mobile1300}>{card.name}</div>
+          <div  className={style.card__title__mobile700}>{card.namemobile}</div>
+          </div>
+        :<div className={style.card__title} onClick={handleOpenDetails}>{card.name}</div>
+        }
         <div className={style.card__body}>
           <h1 className={style.price}>{card.price} ₽</h1>
            <button className={style.cardBtn} onClick={handleOpenModal}>Заказать</button>

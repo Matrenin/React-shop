@@ -58,9 +58,11 @@ margin-bottom: 40px
   border: 1px solid #404936; 
   padding:8px 5%; 
 } 
-span{
+.prefix{
   color:#404936;
   padding: 0 5px;
+  vertical-align: super;
+  margin: 0;
 }
 
 
@@ -90,4 +92,23 @@ span{
   text-align: center;
   padding: 10px;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .boxForm{ 
+    max-width: 100%;
+    display: flex; 
+    justify-content: center; 
+    margin-top: 20px ;
+    align-items:center;
+    flex-direction: column;
+  } 
+  .radioBox{
+ margin-bottom: 30px;
+ justify-content: center;
+  }
+  .inputsBox{ 
+    grid-row-gap:15px;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+    } 
 }

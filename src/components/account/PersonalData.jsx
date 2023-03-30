@@ -6,7 +6,7 @@ import imgEdit from '../../assets/edit.png'
 import { useDispatch } from 'react-redux'
 import { editUser } from '../../store/auth/action'
 import { editUserName, editUserEmail, editUserPhone } from '../../services/firebase'
-import { LinearProgress } from '@mui/material';
+import Loader from '../../ui/Loader'
 
 
 const PersonalData = () => {
@@ -56,16 +56,14 @@ const PersonalData = () => {
         <h2>Личные данные</h2>
       </div>
       {loading && (
-       <div className='container'>
-        <LinearProgress color="success"/>
-       </div>
+          <Loader />
       )}
       <div className="personalData__wrapper">
       {errorMessage ?
         <div className="personalData__error" >{errorMessage}</div> : null
       }
         <div className="personalData__input-item">
-          <span>Имя</span>
+          <span className="personalData__input-item_name">Имя</span>
           { editName
             ? <input
                 type="text"
@@ -80,7 +78,7 @@ const PersonalData = () => {
           </button>        
         </div>
         <div className="personalData__input-item">
-          <span>Телефон</span>
+          <span className="personalData__input-item_phone">Телефон</span>
           { editPhone
             ? <input
                 type="text"
@@ -95,7 +93,7 @@ const PersonalData = () => {
           </button>
         </div>
         <div className="personalData__input-item">
-          <span>Email</span>
+          <span className="personalData__input-item_mail">Email</span>
           { editEmail
             ? <input
                 type="text"

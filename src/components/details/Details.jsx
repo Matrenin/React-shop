@@ -38,7 +38,11 @@ const Details = ({ card }) => {
 
     return (
     <>
+       
         <div className={style.details} key={card.id}>
+        <h2 className={style.details__body_title} >
+            {card.name.toUpperCase()}
+         </h2>
             <div className={style.details__images}>
                 <img className={style.details__images_img} src={wordData.value} alt="img" />
                 <div className={style.flex_row}>
@@ -52,9 +56,6 @@ const Details = ({ card }) => {
             </div>
        
             <div className={style.details__body}>
-                <h2 className={style.details__body_title} >
-                    {card.name.toUpperCase()}
-                </h2>
                 <div className={style.details__body_info}>
                     <h1 className={style.details__price} >
                     {selectedMesurement} ₽

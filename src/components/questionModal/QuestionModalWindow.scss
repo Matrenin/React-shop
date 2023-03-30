@@ -76,3 +76,27 @@ margin-bottom: 50px;
   border: 1px solid #547147;
 }
 
+@media (max-width: 500px) {
+  .questionModalWindow__modal{
+    max-width: 325px;
+    max-height: 300px;
+    padding-top: 70px;
+  }
+  .questionModalWindow__blockText{
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .questionModalWindow__button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .questionModalWindow__button{
+    width: 295px;
+    height: 40px;
+    padding: 7px 0;
+  }
+}

@@ -48,13 +48,42 @@
 
 }
 .cancelModal__boldText{
+  margin: 0;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  color: #333333;
+  font-family: 'Montserrat';
+  margin-bottom: 140px;
   font-weight: bold;
 }
 
 .cancelModal__hrefText{
   font-family: 'Montserrat';
   font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 30px;
+  line-height: 30px;
   color: #547147;
+}
+
+@media (max-width: 500px) {
+  .cancelModal__modal{
+  padding-top: 120px;
+  max-width: 335px;
+  max-height: 300px;
+
+  }
+  .cancelModal__text{
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 95px;
+  }
+  .cancelModal__boldText{
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .cancelModal__hrefText{
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

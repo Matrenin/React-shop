@@ -5,11 +5,11 @@ const Sertificates = () => {
   return (
     <>
       <section className="sertificates">
+       <h3>СЕРТИФИКАТ В ДИЗАЙНЕРСКОМ КОНВEРТЕ</h3>
         <div className="sertificates__img">
           <img src={certificates} alt="certificates_img" />
         </div>
         <div className="sertificates__info">
-          <h3>СЕРТИФИКАТ В ДИЗАЙНЕРСКОМ КОНВEРТЕ</h3>
           <ul>
             <li>Электронный сертификат - бесплатный</li>
             <li>Сертификат в подарочном конверте - 200р</li>

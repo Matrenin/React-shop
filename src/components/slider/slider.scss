@@ -4,6 +4,12 @@
   &__box {
     position: relative;
 
+    img {
+      max-width: 100%;
+      min-height: 380px;
+      height: 100%;
+    }
+
     &-info {
       position: absolute;
       bottom: 50px;
@@ -82,3 +88,116 @@
 .slider__btn-active {
   background: #fff;
 }
+
+
+@media (max-width: 950px) {
+  .slider {
+    &__box {
+      &-info {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+  
+        & p {
+          max-width: 170px;
+          font-size: 25px;
+          line-height: 29px;
+          padding: 10px 20px;
+        }
+  
+        & h1 {
+          max-width: 500px;
+          font-size: 60px;
+          line-height: 64px;
+        }
+  
+        & button {
+          font-size: 16px;
+          line-height: 20px;
+          padding: 12px 20px;
+        }
+      }
+  
+      &-btns {
+        &-btn {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .slider .container {
+ margin: 0 10px;
+  }
+  .slider {
+    margin-top: 20px;
+    &__box {
+      img {
+        min-height: 380px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .slider {
+    &__box {
+      &-info {
+        bottom: 80px;
+        left: 20px;
+        & p {
+          max-width: 85px;
+          font-size: 12px;
+          line-height: 16px;
+          padding: 6px 10px;
+          margin-bottom: 16px;
+        }
+        & h1 {
+          max-width: 450px;
+          font-size: 28px;
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+        & button {
+          border-radius: 40px;
+          font-size: 14px;
+          line-height: 18px;
+          padding: 11px 22px;
+        }
+      }
+  
+      &-btns {
+        bottom: 20px;
+        left: 40%;
+        right: 0;
+  
+        &-btn {
+          width: 10px;
+          height: 10px;
+          border: 1px solid #fff;
+        }
+          
+        }
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .slider {
+      &__box {
+        &-info {
+          & h1 {
+            max-width: 300px;
+            font-size: 28px;
+            line-height: 32px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }

@@ -22,7 +22,7 @@ const Comment = ({ comment, cardsComments, card, id, idComment }) => {
         <div className='comment__container'>
             <div className='comment__body'>
                 <img
-                    src={cardIndex.img}
+                    src={cardIndex?.img}
                     alt={comment.card}
                 />
                 <div className='comment__text'>

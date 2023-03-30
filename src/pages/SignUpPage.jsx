@@ -8,7 +8,7 @@ import { writeUserEmail, writeUserName, getUserValue } from '../services/firebas
 import { setUser } from "../store/auth/action";
 
 import FormLogin from "../components/formLogin/formLogin"
-import { LinearProgress } from '@mui/material';
+import Loader from '../ui/Loader';
 
 const SignUpPage = () => {
 
@@ -109,9 +109,7 @@ const SignUpPage = () => {
   return (
     <>
       {loading && (
-       <div className='container'>
-        <LinearProgress color="success"/>
-       </div>
+       <Loader />
       )}
       <section className="formLogin container">
         {errorMessage ?

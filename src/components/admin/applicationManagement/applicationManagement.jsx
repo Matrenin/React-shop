@@ -1,11 +1,14 @@
 import { getApplicationList, writeUserApplicationStatus, writeApplicationStatusAdmin } from '../../../services/firebase'
 import { useState, useEffect } from 'react'
 import './applicationManagement.scss'
+import Pagination from '../../../components/pagination/Pagination';
 
 const ApplicationManagementAdmin = () => {
   const [list, setList] = useState({})
   const [arrowOne, setArrowOne] = useState("")
   const [arrowTwo, setArrowTwo] = useState("")
+  const [currentPage, setCurrentPage] = useState(1)
+  const [countriesPerPage] = useState(10)
 
   useEffect(() => {
     getApplicationList()
@@ -64,6 +67,14 @@ const ApplicationManagementAdmin = () => {
     writeApplicationStatusAdmin(idApplication, e.target.value)
   }
 
+  // пагинация
+  const lastCountryIndex = currentPage * countriesPerPage
+  const firstCountryIndex = lastCountryIndex - countriesPerPage
+  const totalCoutries = Object.keys(list).length
+  const currentCountry = Object.entries(list).slice(firstCountryIndex, lastCountryIndex)
+  const currentCountryList = Object.fromEntries(currentCountry)
+  const paginate = pageNumber => setCurrentPage(pageNumber)
+
   return (
     <>
       <div className='applicationManagmentAdminFilter'>
@@ -92,11 +103,11 @@ const ApplicationManagementAdmin = () => {
         </div>
       </div>
       <div className="applicationManagmentAdmin">
-        {Object.keys(list).map((key, i) => (
+        {Object.keys(currentCountryList).map((key, i) => (
           <div className="applicationManagmentAdmin__item" key={key}>
             <div className="applicationManagmentAdmin__item_iner">
-              <div className="applicationManagmentAdmin__item_iner-title borderLeft">№</div>
-              <div className="applicationManagmentAdmin__item_iner-key">{i + 1}</div>
+              <div className="applicationManagmentAdmin__item_iner-title borderLeft">№ заказа</div>
+              <div className="applicationManagmentAdmin__item_iner-key">{(currentPage-1)*10+1+i}</div>
             </div>
             <div className="applicationManagmentAdmin__item_iner">
               <div className="applicationManagmentAdmin__item_iner-title">Дата</div>
@@ -124,26 +135,30 @@ const ApplicationManagementAdmin = () => {
             </div>
             <div className="applicationManagmentAdmin__item_iner">
               <div className="applicationManagmentAdmin__item_iner-title">Статус</div>
-              {(list[key].status?.status === "В обработке" && <div className="applicationManagmentAdmin__item_iner-key yellow">{list[key].status?.status}</div>) ||
-                (list[key].status?.status === "Отменить" && <div className="applicationManagmentAdmin__item_iner-key rose">{list[key].status?.status}</div>) ||
-                (list[key].status?.status === "Завершена" && <div className="applicationManagmentAdmin__item_iner-key green">{list[key].status?.status}</div>) ||
-                (list[key].status?.status === undefined && <div className="applicationManagmentAdmin__item_iner-key ">{list[key].status?.status}</div>)}
+              <div className="applicationManagmentAdmin__item_iner-key">{list[key].status?.status}</div>
             </div>
             <div className="applicationManagmentAdmin__item_iner">
               <div className="applicationManagmentAdmin__item_iner-title borderRight">Комментарий</div>
               <div className="applicationManagmentAdmin__item_iner-key">
-
-                <textarea className="applicationManagmentAdmin__item_iner-key-input"
-                  type='text'
-                  onBlur={(e) => handleStatusAdmin(e, key)}
-                  placeholder='Введите...'
-                  defaultValue={list[key].statusAdmin?.statusAdmin}
-                ></textarea>
+              
+              <textarea className="applicationManagmentAdmin__item_iner-key-input"
+                type='text' 
+                onBlur={(e) => handleStatusAdmin(e, key)}
+                placeholder='Введите...'
+                defaultValue={list[key].statusAdmin?.statusAdmin}
+            ></textarea>
               </div>
             </div>
           </div>
         ))}
+         <Pagination
+            countriesPerPage={countriesPerPage}
+            totalCoutries={totalCoutries}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
       </div>
+     
     </>
   )
 }

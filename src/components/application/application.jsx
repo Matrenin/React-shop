@@ -73,20 +73,24 @@ export function Application() {
                 return
             }
         } else {
-            let applicationObj = {
-                [idApplication]: {
-                    card,
-                    status: {status: 'В обработке'},
-                    date: getDate()
+            if (card.id !== undefined) {
+                let applicationObj = {
+                    [idApplication]: {
+                        card,
+                        status: {status: 'В обработке'},
+                        date: getDate()
+                    }
                 }
+                const date = getDate()
+                const status = 'В обработке'
+                dispatch(addAuthApplications(applicationObj))
+                dispatch(addApplication(applicationObj)) // добавляю в стор applications
+                codeDuplication()
+                writeUserApplication(id, idApplication, card, date, userName, userPhone, userEmail)
+                writeUserApplicationStatus(id, idApplication, status)
+            } else {
+                return
             }
-            const date = getDate()
-            const status = 'В обработке'
-            dispatch(addAuthApplications(applicationObj))
-            dispatch(addApplication(applicationObj)) // добавляю в стор applications
-            codeDuplication()
-            writeUserApplication(id, idApplication, card, date, userName, userPhone, userEmail)
-            writeUserApplicationStatus(id, idApplication, status)
         }
     }
 

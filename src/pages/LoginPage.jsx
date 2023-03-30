@@ -8,7 +8,7 @@ import FormLogin from "../components/formLogin/formLogin"
 import { setUser } from "../store/auth/action";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { writeUserEmail, writeUserName, getUserValue } from '../services/firebase'
-import { LinearProgress } from '@mui/material';
+import Loader from '../ui/Loader';
 
 const LoginPage = () => {
 
@@ -130,9 +130,7 @@ const LoginPage = () => {
   return (
     <>
       {loading && (
-       <div className='container'>
-        <LinearProgress color="success"/>
-       </div>
+        <Loader /> 
       )}
         <section className="formLogin container">
           {errorMessage ?

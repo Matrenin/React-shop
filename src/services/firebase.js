@@ -91,13 +91,14 @@ export const editUserPhone = (id, phone) => {
 // ОТЗЫВЫ
 
 //отправить отзыв
-export const editUserComment = (id, name, rating, comment, card ) => {
+export const editUserComment = (id, name, rating, comment, card, date ) => {
   const newCommentKey = push(ref(db, 'users/' + id + '/comments/')).key;
   set(ref(db, 'users/' + id + '/comments/' + newCommentKey), {
     name: name,
     rating: rating, 
     comment: comment, 
-    card: card
+    card: card,
+    date: date
   });
   set(ref(db, 'commentsList/' + newCommentKey), {
     name: name,
