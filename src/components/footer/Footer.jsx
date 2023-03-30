@@ -77,7 +77,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="footer__column question">
+            <div className="footer__column questions">
               <h1>Остались вопросы?</h1>
               <p className="footer__column-text">Оставьте заявку, мы свяжемся с Вами <br /> в ближайшее время</p>
               <button onClick={handleShowModal}>Оставить заявку</button>
