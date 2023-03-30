@@ -182,6 +182,12 @@
       color: #333333;
     }
 
+    &__errorMes {
+      margin-top: -11px;
+      margin-bottom: 5px;
+      font-size: 11px;
+    }
+
     & form {
       margin-top: 60px;
       max-width: 330px;
