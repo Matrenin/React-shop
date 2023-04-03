@@ -1,14 +1,15 @@
 .selectImpression {
-  width: 440px;
+  width: 100%;
   background: #F6F1E4;
   border: 1px solid #C2C2C2;
   border-radius: 10px;
-  padding: 14px;
+  padding: 20px 15px;
+  box-sizing: border-box;
   position: absolute;
   z-index: 20;
 
   &__main {
-    height: 22px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,20 +60,21 @@
   transform: rotate(180deg);
 }
 
-
-@media (max-width: 1058px) {
+@media (max-width: 920px) {
   .selectImpression {
-    width: 275px;
-  }
-
-}
-@media (max-width: 500px) {
-  .selectImpression {
-    width: 275px;
-    padding: 10px;
-    font-weight: 400;
+    padding: 14px;
     font-size: 14px;
     line-height: 18px;
   }
 
 }
+
+// @media (max-width: 500px) {
+//   .selectImpression {
+//     padding: 15px;
+//     font-weight: 400;
+//     font-size: 14px;
+//     line-height: 18px;
+//   }
+
+// }

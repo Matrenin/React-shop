@@ -45,7 +45,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="footer__box container">
           <div className="footer__row">
-            <div className="footer__column">
+            <div className="footer__column logo">
               <img className="footer__logo" src={flogo} alt="flogo" />
               <p className="footer__column-allright">Все права защищены<br />
                 © Дари Душой, 2023 г.
@@ -77,7 +77,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="footer__column questions">
+            <div className="footer__column question">
               <h1>Остались вопросы?</h1>
               <p className="footer__column-text">Оставьте заявку, мы свяжемся с Вами <br /> в ближайшее время</p>
               <button onClick={handleShowModal}>Оставить заявку</button>
