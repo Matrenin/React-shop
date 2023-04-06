@@ -22,7 +22,7 @@ const ApplicationManagementAdmin = () => {
       .then(data => {
         setList(data)
       })
-  }, [list])
+  }, [modalDelete, value])
 
   function filterForDate() {
     const array = Object.entries(list)
@@ -40,17 +40,18 @@ const ApplicationManagementAdmin = () => {
 
   function filterForStatus() {
     const arrayList = Object.entries(list)
-
     const mapping = arrayList.map((e) => {
       if ("status" in e[1]) {
         if (e[1].status.status === "В обработке") {
           e[1].controlIndex = "1"
         }
-        if (e[1].status.status === "Отменить") {
+        else if (e[1].status.status === "Отменить") {
           e[1].controlIndex = "3"
         }
-        if (e[1].status.status === "Завершена") {
+        else if (e[1].status.status === "Завершена") {
           e[1].controlIndex = "4"
+        } else {
+          e[1].controlIndex = "2"
         }
       } else {
         e[1].controlIndex = "2"
@@ -119,7 +120,7 @@ const ApplicationManagementAdmin = () => {
           <div className="applicationManagmentAdmin__item" key={key}>
             <div className="applicationManagmentAdmin__item_iner">
               <div className="applicationManagmentAdmin__item_iner-title borderLeft">№ заказа</div>
-              <div className="applicationManagmentAdmin__item_iner-key">{(currentPage-1)*10+1+i}</div>
+              <div className="applicationManagmentAdmin__item_iner-key">{(currentPage - 1) * 10 + 1 + i}</div>
             </div>
             <div className="applicationManagmentAdmin__item_iner">
               <div className="applicationManagmentAdmin__item_iner-title">Дата</div>
@@ -160,30 +161,30 @@ const ApplicationManagementAdmin = () => {
             <div className="applicationManagmentAdmin__item_iner">
               <div className="applicationManagmentAdmin__item_iner-title borderRight">Комментарий</div>
               <div className="applicationManagmentAdmin__item_iner-key">
-              
-              <textarea className="applicationManagmentAdmin__item_iner-key-input"
-                type='text' 
-                onBlur={(e) => handleStatusAdmin(e, key)}
-                placeholder='Введите...'
-                defaultValue={list[key].statusAdmin?.statusAdmin}
-            ></textarea>
+
+                <textarea className="applicationManagmentAdmin__item_iner-key-input"
+                  type='text'
+                  onBlur={(e) => handleStatusAdmin(e, key)}
+                  placeholder='Введите...'
+                  defaultValue={list[key].statusAdmin?.statusAdmin}
+                ></textarea>
               </div>
             </div>
           </div>
         ))}
-         <Pagination
-            countriesPerPage={countriesPerPage}
-            totalCoutries={totalCoutries}
-            paginate={paginate}
-            currentPage={currentPage}
-          />
+        <Pagination
+          countriesPerPage={countriesPerPage}
+          totalCoutries={totalCoutries}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
       </div>
-      { modalQuestion &&
-        <QuestionModalWindow/>
+      {modalQuestion &&
+        <QuestionModalWindow />
       }
       {
         modalDelete &&
-        <CancelModalWindow/>
+        <CancelModalWindow />
       }
     </>
   )
