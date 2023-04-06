@@ -22,7 +22,7 @@ const ApplicationManagementAdmin = () => {
       .then(data => {
         setList(data)
       })
-  }, [modalDelete])
+  }, [modalDelete, value])
 
   function filterForDate() {
     const array = Object.entries(list)
