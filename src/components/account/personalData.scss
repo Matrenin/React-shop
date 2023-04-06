@@ -23,7 +23,6 @@
 
   &__wrapper {
     margin-top:50px;
-    
   }
 
   &__input-item {
@@ -101,41 +100,48 @@
     margin: 0 auto;
   }
 }
+
 .shellMenu{
   display: none;
 }
+
 .mobile{
   display: none;
 }
+
 @media (max-width: 800px) {
   .personalData{
     &__top{
       & h2{
         font-size: 16px;
         line-height: 21px;
-      }
-      
+      }  
     }
+
     &__wrapper {
         margin-top:30px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
     &__input-item {
       max-width: 465px;
       min-width: 160px;
       width: 100%;
+
       & p{
         margin: 0 12px;
         width: 100%;
         min-width: 160px;
       }
+
       & input{
         width: 100%;
         margin: 0 12px;
       }
   }
+
   &__btn-save {
     width: 95%;
     max-width: 280px;
@@ -144,6 +150,7 @@
   }
 }
 }
+
 @media(max-width:500px){
   .shellMenu{
     display: flex;
@@ -156,38 +163,44 @@
     margin: 0 15px 0 0;
     }
   }
+
   .mobile{
       margin-bottom: 7px;
       color: #547147;
       display: inline;
   }
+
   .personalData__wrapper{
     width: 95%;
   }
+
   .personalData__input-item {
-  & span{
-    display: none;
+    & span{
+      display: none;
+    }
+
+    & p{
+      width: 100%;
+    }
+
+    & input{
+      width: 100%;
+      margin: 0 12px;
+    }
   }
-  & p{
-    width: 100%;
-  }
-  & input{
-    width: 100%;
-    margin: 0 12px;
-  }
-}
+
 .personalData__top{
- & h2 {
-  font-size: 16px;
-  line-height: 21px;
-} 
-& img{
-    width: 30px;
-}
+  & h2 {
+    font-size: 16px;
+    line-height: 21px;
+  } 
+
+  & img{
+      width: 30px;
+  }
 } 
 
 .personalData__btn-save{
   margin: 0 auto 40px;
 }
 }
-

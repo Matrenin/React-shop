@@ -90,6 +90,18 @@
         top: 13px;
         right: 15px;
       }
+
+      @media (max-width: 700px) {
+        position: initial;
+      }
+
+      @media (max-width: 500px) {
+        position: absolute;
+      }
+
+      @media (max-width: 320px) {
+        position: initial;
+      }
     }
 
     &-status {
@@ -146,7 +158,6 @@
       line-height: 1.5em !important;
       text-align: center ;
     }
-
   }
 
   &__info {
